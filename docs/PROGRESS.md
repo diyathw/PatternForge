@@ -1,6 +1,6 @@
 # PatternForge session handoff
 
-Updated: 2026-09-11 (Claude integration session; app builds, tests, and runs end-to-end; deployed live to GitHub Pages).
+Updated: 2026-09-11 (Claude integration session; app builds, tests, and runs end-to-end; deployed live to GitHub Pages with light/dark/system theming and mobile-responsive layout).
 
 ## Resume here
 
@@ -33,6 +33,10 @@ Read this file, `IMPLEMENTATION_PLAN.md`, `CURRICULUM_QA.md`, and root agent ins
 - Pattern Map's relationship view was a plain text list. Added `GraphDiagram` — a real SVG ego-graph (center node + radial neighbors from parent/children/relationship edges, edge-type labels, click-to-recenter) — as the primary visual, alongside (not replacing) the existing text list.
 - Live-verified Python/Pyodide execution end-to-end this session (previously untested): cold-loaded Pyodide in a real browser, ran a solution for the `anagram` exercise, all tests passed. Both language paths are now confirmed working, not just typechecked.
 - Noticed but not fixed: two exercises (`hash-map` and `pair-sum`) share the exact title "Find a complementary pair" in the Practice exercise picker — cosmetic content dedup, not a bug, low priority.
+- Added deep content (hand-traced steps, JS+Python, tests) for the 6 remaining patterns from the well-known "14 Patterns" interview reference list that weren't yet covered: Cyclic Sort, Two Heaps, Subsets, Top K Elements, K-way Merge, 0/1 Knapsack. Both language implementations independently verified by real execution (JS via `new Function`, Python via native CPython) against their test cases, not just hand-traced.
+- Added light/dark/system theme support: `ThemeMode` in `domain.ts`, `theme`/`setTheme` persisted in `useLearningStore`, a `ThemeSwitch` control next to `LanguageSwitch`, CSS tokens split into dark (default `:root`)/light (`[data-theme="light"]`)/system (`prefers-color-scheme` media query) palettes, and Monaco's editor theme wired to follow the same resolution instead of being hardcoded to `vs-dark`.
+- Mobile topbar was overflowing once `ThemeSwitch` (3 buttons) joined `LanguageSwitch` (2 buttons), the search shortcut, breadcrumb, and hamburger in one row. Fixed below the 860px breakpoint: hide the breadcrumb, collapse the search shortcut/language switch/theme switch to icon-only by hiding their descriptive `<span>` labels.
+- `.lesson-intro`'s two-column grid used the CSS Grid default `align-items: stretch`, so a short panel (e.g. "The reusable skeleton") stretched to match a much taller sibling (e.g. "Worked example"), leaving several hundred pixels of empty panel space — very visible at tablet width. Added `align-items: start`, matching what `.map-layout`/`.practice-grid`/`.daily-layout` already had. Verified via Playwright (real viewport control) at 375px/768px: topbar, Pattern Map (including the SVG graph diagram scaling down and staying legible), Practice, and the Lesson page's hamburger drawer all confirmed working correctly.
 
 ## Known gaps / not yet done
 

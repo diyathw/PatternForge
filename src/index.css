@@ -827,6 +827,7 @@ button:disabled {
 .lesson-intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: start;
   gap: 0.9rem;
   margin: 1.5rem 0;
 }
