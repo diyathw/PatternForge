@@ -517,7 +517,7 @@ export const nodes: KnowledgeNode[] = [
     complexityNotes:
       "O(n) time, O(1) extra space — only applicable when values are a known contiguous range that can double as valid array indices. Swap each value to its home index (value v belongs at index v-1), then scan once for mismatches.",
     languageTemplatesAvailable: [],
-    contentStatus: "skeleton",
+    contentStatus: "complete",
   },
   {
     id: "index-placement",

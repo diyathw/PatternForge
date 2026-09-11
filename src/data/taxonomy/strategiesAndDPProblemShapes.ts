@@ -110,7 +110,7 @@ export const problemShapes: ProblemShape[] = [
     disambiguation:
       "Need to actually list every subset -> `backtracking` (include/exclude recursion, sorted + skip-duplicates for 'Subsets II') or an iterative bitmask enumeration over 0..2^n-1. Need only to know whether some subset (or how many subsets) satisfies a sum/count property, without listing them -> DP (`subset-sum` for boolean reachability, `01-knapsack` for a value-optimizing variant) — dramatically cheaper than materializing 2^n subsets. Need the OPTIMAL value achievable for every possible subset composition simultaneously (n <= ~20) -> `bitmask-dp`, where the mask itself is the DP state.",
     languageTemplatesAvailable: [],
-    contentStatus: "skeleton",
+    contentStatus: "complete",
   },
   {
     id: "partition-problems",

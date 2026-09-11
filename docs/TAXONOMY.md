@@ -4,7 +4,7 @@ Generated from `src/data/taxonomy/` by `scripts/generate-taxonomy-doc.ts`. Do no
 
 Legend: ○ skeleton · ◐ in-progress · ● complete
 
-- **384** total nodes (**22** complete, **362** skeleton)
+- **384** total nodes (**26** complete, **358** skeleton)
 - **59** problem shapes
 - **964** relationships
 - **6** complexity heuristics
@@ -59,7 +59,7 @@ Legend: ○ skeleton · ◐ in-progress · ● complete
 | | id | name | type | difficulty | interview frequency |
 |---|---|---|---|---|---|
 | ○ | `coordinate-compression` | Coordinate Compression | pattern | intermediate | medium |
-| ○ | `cyclic-sort` | Cyclic Sort | pattern | intermediate | medium |
+| ● | `cyclic-sort` | Cyclic Sort | pattern | intermediate | medium |
 | ○ | `difference-array` | Difference Array | pattern | intermediate | medium |
 | ○ | `dutch-national-flag` | Dutch National Flag | algorithm | intermediate | medium |
 | ● | `fast-slow-pointers` | Fast/Slow Pointers | pattern | core | high |
@@ -178,7 +178,7 @@ Legend: ○ skeleton · ◐ in-progress · ● complete
 
 | | id | name | type | difficulty | interview frequency |
 |---|---|---|---|---|---|
-| ○ | `01-knapsack` | 0/1 Knapsack | pattern | core | very-high |
+| ● | `01-knapsack` | 0/1 Knapsack | pattern | core | very-high |
 | ○ | `1d-dp` | 1D DP | pattern | core | very-high |
 | ○ | `2d-dp` | 2D DP | pattern | core | very-high |
 | ○ | `base-case` | Base Case | concept | core | high |
@@ -272,11 +272,11 @@ Legend: ○ skeleton · ◐ in-progress · ● complete
 | ○ | `lazy-deletion-heap` | Lazy Deletion Heap | optimization | advanced | low |
 | ○ | `max-heap` | Max Heap | data-structure | core | very-high |
 | ○ | `merge-k-sorted-arrays` | Merge K Sorted Arrays | pattern | intermediate | medium |
-| ○ | `merge-k-sorted-lists` | Merge K Sorted Lists | pattern | intermediate | high |
+| ● | `merge-k-sorted-lists` | Merge K Sorted Lists | pattern | intermediate | high |
 | ● | `min-heap` | Min Heap | data-structure | core | very-high |
 | ○ | `scheduling-with-heap` | Scheduling with Heap | pattern | intermediate | medium |
 | ○ | `streaming-median` | Streaming Median | pattern | advanced | medium |
-| ○ | `two-heaps` | Two Heaps | pattern | advanced | medium |
+| ● | `two-heaps` | Two Heaps | pattern | advanced | medium |
 
 ### intervals-events
 

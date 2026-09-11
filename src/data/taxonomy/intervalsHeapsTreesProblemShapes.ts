@@ -224,7 +224,7 @@ export const problemShapes: ProblemShape[] = [
     disambiguation:
       "A size-k heap (min-heap for top-k-largest, max-heap for top-k-smallest) runs in O(n log k), stays simple to reason about, and naturally supports streaming input where n isn't known upfront. Quickselect (partition-based) achieves O(n) average time but requires the full dataset in memory upfront (no streaming), mutates the input array, and has O(n^2) worst case without randomized pivoting. Bucket sort by frequency/value is O(n) and simplest of all when the value range (e.g. frequency counts bounded by n) is known and bounded — but it doesn't generalize to arbitrary/unbounded value ranges the way heap or quickselect do.",
     languageTemplatesAvailable: [],
-    contentStatus: "skeleton",
+    contentStatus: "complete",
   },
   {
     id: "kth-largest-kth-smallest",

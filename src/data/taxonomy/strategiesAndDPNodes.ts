@@ -721,7 +721,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["subsets-shape"],
     languageTemplatesAvailable: [],
-    contentStatus: "skeleton",
+    contentStatus: "complete",
   },
   {
     id: "unbounded-knapsack",

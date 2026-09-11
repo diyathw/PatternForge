@@ -287,7 +287,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes: "O(log n) per insert/rebalance.",
     languageTemplatesAvailable: [],
-    contentStatus: "skeleton",
+    contentStatus: "complete",
   },
   {
     id: "merge-k-sorted-lists",
@@ -305,7 +305,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes: "O(n log k) where n is total elements and k is the number of lists.",
     languageTemplatesAvailable: [],
-    contentStatus: "skeleton",
+    contentStatus: "complete",
   },
   {
     id: "merge-k-sorted-arrays",

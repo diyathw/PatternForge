@@ -2,6 +2,7 @@ import { lessons, practice } from './catalog'
 import './arrays'
 import './graphs'
 import './structures'
+import './interview14'
 import type { PatternContent, CodingExercise } from '../../types/domain'
 
 export const patternContents: PatternContent[] = lessons
