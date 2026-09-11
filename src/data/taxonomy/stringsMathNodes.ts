@@ -37,7 +37,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["repeated-string-matching"],
     complexityNotes:
       "O(n) time with a fixed-size array (26/128/256 buckets) or hash map; O(1) extra space when the alphabet is bounded.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -58,7 +58,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["prefix-search"],
     complexityNotes:
       "O(L) insert/search/prefix-query where L is the word length, independent of dictionary size; O(total characters * alphabet size) space in the naive array-of-children form.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -77,7 +77,7 @@ export const nodes: KnowledgeNode[] = [
       "count words with a given prefix",
     ],
     commonProblemShapes: ["prefix-search"],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -96,7 +96,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n^2) nodes in the naive construction — mostly a teaching stepping stone toward suffix tree/automaton, rarely used directly in practice.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -116,7 +116,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["repeated-string-matching"],
     complexityNotes: "O(n + m) time, O(m) space for the failure function.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -134,7 +134,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["repeated-string-matching"],
     complexityNotes: "O(n) to compute for a string of length n.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -151,7 +151,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["repeated-string-matching"],
     complexityNotes: "O(n) time and space to build the Z-array.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -170,7 +170,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["repeated-string-matching"],
     complexityNotes:
       "O(n + m) expected time with a good rolling hash; O(n*m) worst case under hash collisions unless double-hashing is used.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -189,7 +189,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["repeated-string-matching"],
     complexityNotes:
       "O(1) amortized per shift; watch for hash collisions — use a large prime modulus or double hashing on adversarial inputs.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -206,7 +206,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["palindrome-substring-queries"],
     complexityNotes: "O(n) time using a transformed string with separators.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -226,7 +226,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["multiple-string-pattern-search"],
     complexityNotes:
       "O(total pattern length) to build, O(n + number of matches) to scan the text.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -244,7 +244,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n log n) to build with radix/doubling; O(n) with SA-IS. Pairs with an LCP array for many substring queries.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -262,7 +262,7 @@ export const nodes: KnowledgeNode[] = [
       "longest repeated substring",
     ],
     complexityNotes: "O(n) via Kasai's algorithm given the suffix array and its rank inverse.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -280,7 +280,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n) construction with Ukkonen's algorithm; heavy constant factor and implementation complexity relative to a suffix array.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -296,7 +296,7 @@ export const nodes: KnowledgeNode[] = [
       "find the number of occurrences of every substring",
     ],
     complexityNotes: "O(n) states and transitions, built online in O(n) (constant alphabet).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -314,7 +314,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["palindrome-substring-queries"],
     complexityNotes: "O(n) time and space, amortized, to build over a string of length n.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -334,7 +334,7 @@ export const nodes: KnowledgeNode[] = [
       "problem mentions bits, binary, or asks for an O(1)-space trick",
       "toggle, mask, or isolate bits of an integer",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -351,7 +351,7 @@ export const nodes: KnowledgeNode[] = [
       "move bits into position to build or read a mask",
       "iterate over bit positions of a number",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -368,7 +368,7 @@ export const nodes: KnowledgeNode[] = [
       "turn on/off/flip a specific bit without touching the others",
       "represent a small set of booleans or flags as one integer",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -386,7 +386,7 @@ export const nodes: KnowledgeNode[] = [
       "underlies Fenwick tree / Binary Indexed Tree indexing",
     ],
     complexityNotes: "n & (-n) isolates the lowest set bit in O(1) using two's complement.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -404,7 +404,7 @@ export const nodes: KnowledgeNode[] = [
       "n & (n-1) clears the lowest set bit — zero only for powers of two",
     ],
     complexityNotes: "O(1): n > 0 && (n & (n - 1)) === 0.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -423,7 +423,7 @@ export const nodes: KnowledgeNode[] = [
       "XOR of a value with itself cancels to zero",
     ],
     complexityNotes: "O(n) time, O(1) space — relies on XOR being commutative, associative, and self-inverse.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -440,7 +440,7 @@ export const nodes: KnowledgeNode[] = [
       "brute force over all possible subsets/states",
     ],
     complexityNotes: "O(2^n * n) typical when enumerating all subsets and inspecting each bit.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -458,7 +458,7 @@ export const nodes: KnowledgeNode[] = [
       "for (sub = mask; sub; sub = (sub - 1) & mask) idiom",
     ],
     complexityNotes: "O(3^n) total across all masks when enumerating every submask of every mask.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -474,7 +474,7 @@ export const nodes: KnowledgeNode[] = [
       "reflected binary code",
       "g = n ^ (n >> 1)",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -491,7 +491,7 @@ export const nodes: KnowledgeNode[] = [
       "subset-sum feasibility via shifted bitsets",
     ],
     complexityNotes: "Cuts an O(n*m) inner loop to O(n*m/w) where w is machine word size (typically 32 or 64).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -511,7 +511,7 @@ export const nodes: KnowledgeNode[] = [
       "problem mentions simplifying ratios or step sizes",
     ],
     commonProblemShapes: [],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -527,7 +527,7 @@ export const nodes: KnowledgeNode[] = [
       "the standard constructive algorithm implementing GCD",
     ],
     complexityNotes: "O(log(min(a, b))) time.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -545,7 +545,7 @@ export const nodes: KnowledgeNode[] = [
       "compute a modular inverse when the modulus is not prime",
     ],
     complexityNotes: "O(log(min(a, b))) time, same recursion depth as the plain Euclidean algorithm.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -561,7 +561,7 @@ export const nodes: KnowledgeNode[] = [
       "synchronize repeating events/cycles",
       "lcm(a, b) = a * b / gcd(a, b)",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -576,7 +576,7 @@ export const nodes: KnowledgeNode[] = [
       "counting problems with huge results",
       "wraparound / cyclic indexing",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -594,7 +594,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(log m) via extended Euclid or Fermat's little theorem (a^(m-2) mod m) when m is prime.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -612,7 +612,7 @@ export const nodes: KnowledgeNode[] = [
       "also used to exponentiate matrices or other associative operations",
     ],
     complexityNotes: "O(log b) multiplications instead of O(b).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -629,7 +629,7 @@ export const nodes: KnowledgeNode[] = [
       "need a fast primality check for large numbers (Miller-Rabin)",
     ],
     complexityNotes: "O(sqrt(n)) trial division; O(k log^3 n) for probabilistic Miller-Rabin.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -646,7 +646,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "O(n log log n) time, O(n) space.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -664,7 +664,7 @@ export const nodes: KnowledgeNode[] = [
       "also computes multiplicative functions (Euler's totient, Möbius) alongside the sieve",
     ],
     complexityNotes: "O(n) time, O(n) space.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -681,7 +681,7 @@ export const nodes: KnowledgeNode[] = [
       "find the smallest prime factor of every number up to n",
     ],
     complexityNotes: "O(sqrt(n)) trial division per number; O(log n) per query with a precomputed smallest-prime-factor sieve.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -697,7 +697,7 @@ export const nodes: KnowledgeNode[] = [
       "sum or count of divisors",
     ],
     complexityNotes: "O(sqrt(n)) per number by pairing divisors around sqrt(n).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -714,7 +714,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "Distinct from the backtracking 'generate all combinations/permutations' problem-shape family — this is closed-form/DP counting, not enumeration.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -731,7 +731,7 @@ export const nodes: KnowledgeNode[] = [
       "generate the triangle up to row n",
     ],
     complexityNotes: "O(n^2) to build the first n rows.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -749,7 +749,7 @@ export const nodes: KnowledgeNode[] = [
       "coefficient of a term in a binomial expansion",
     ],
     complexityNotes: "O(k) per query directly, or O(n) precompute + O(1) per query using factorials.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -767,7 +767,7 @@ export const nodes: KnowledgeNode[] = [
       "precompute factorials and inverse factorials mod p",
     ],
     complexityNotes: "O(n) precompute of factorials/inverse factorials, O(1) per nCr query.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -785,7 +785,7 @@ export const nodes: KnowledgeNode[] = [
       "combine remainders from pairwise coprime moduli",
     ],
     complexityNotes: "O(k log M) for k congruences with combined modulus M using pairwise combination.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -801,7 +801,7 @@ export const nodes: KnowledgeNode[] = [
       "compute a modular inverse mod a prime via a^(p-2) mod p",
       "basis for a simple probabilistic primality test",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -819,7 +819,7 @@ export const nodes: KnowledgeNode[] = [
       "φ(n) appears in modular-inverse-adjacent counting problems",
     ],
     complexityNotes: "O(sqrt(n)) per number via prime factorization; O(n log log n) for all values up to n via a sieve.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -836,7 +836,7 @@ export const nodes: KnowledgeNode[] = [
       "represent the recurrence as a transition matrix and raise it to a power",
     ],
     complexityNotes: "O(k^3 log n) for a k x k transition matrix and target index n.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -853,7 +853,7 @@ export const nodes: KnowledgeNode[] = [
       "faster/simpler alternative to matrix exponentiation specifically for Fibonacci",
     ],
     complexityNotes: "O(log n) time using the doubling identities, with a smaller constant than matrix exponentiation.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -869,7 +869,7 @@ export const nodes: KnowledgeNode[] = [
       "count numbers up to n divisible by at least one of several divisors",
       "|A ∪ B| = |A| + |B| - |A ∩ B| generalized to many sets",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -884,7 +884,7 @@ export const nodes: KnowledgeNode[] = [
       "n+1 items into n buckets forces at least one bucket with 2+ items",
       "used to bound search space or prove existence in a proof-style interview question",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -901,7 +901,7 @@ export const nodes: KnowledgeNode[] = [
       "count non-crossing partitions / valid triangulations of a polygon",
       "C(n) = C(2n, n) / (n + 1)",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 ]

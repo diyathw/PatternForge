@@ -50,7 +50,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n^2) time in average/worst case, O(n) best case with an early-exit flag on already-sorted input. O(1) space, stable.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -67,7 +67,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n^2) time in all cases (no best-case improvement), O(1) space, typically implemented unstable.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -85,8 +85,8 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n^2) worst/average case, O(n) best case on nearly-sorted input. O(1) space, stable, adaptive.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "merge-sort",
@@ -105,7 +105,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n log n) time in every case, O(n) auxiliary space for arrays (O(1) extra for linked lists), stable. Also the classic way to count inversions in O(n log n) by counting cross-pairs during each merge.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -124,7 +124,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n log n) average time, O(n^2) worst case (e.g. already-sorted input with a naive pivot). O(log n) space for the recursion stack, in-place, unstable.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -144,7 +144,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["kth-largest"],
     complexityNotes:
       "O(n log n) time in all cases, O(1) space (in-place via array-as-heap), unstable.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -162,7 +162,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n + k) time and space where k is the key range. Stable when implemented with a prefix-sum placement pass. Impractical when k >> n.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -181,7 +181,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(d * (n + k)) time where d is the number of digits/passes and k is the digit range (often 10 or 256). Uses counting sort as a stable subroutine per digit.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -198,7 +198,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n + k) average time under a uniform-distribution assumption, O(n^2) worst case if all elements land in one bucket. Space O(n + k).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -216,7 +216,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "Time complexity depends on the gap sequence, ranging roughly from O(n log n) to O(n^2) (e.g. O(n^1.3) with Sedgewick's sequence). O(1) space, in-place, unstable.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -235,7 +235,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n log n) worst case, O(n) best case on already-sorted or few-runs input. O(n) space, stable. Concept-level node — understand the run-detection + galloping-merge idea, not a from-scratch implementation exercise.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -252,7 +252,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "A sort is stable if elements comparing equal keep their original relative order. Matters whenever a later stable sort by a secondary key must not disturb an earlier sort by a primary key.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -270,7 +270,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "Same asymptotic cost as the underlying sort (usually O(n log n)); the technique is in defining a correct, transitive comparison function rather than in the sort algorithm itself.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -287,7 +287,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "Achievable in O(n log k) with a heap of size k, or O(n) average with quickselect-style partitioning — strictly cheaper than a full O(n log n) sort.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -307,7 +307,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["kth-largest"],
     complexityNotes:
       "O(n) average time, O(n^2) worst case with a poor pivot choice (mitigated with median-of-medians or randomized pivots). O(1) extra space (in-place).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -326,7 +326,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n) single-pass partition around a pivot into three regions. This is the general partitioning technique that the Dutch National Flag problem (see 'dutch-national-flag') is the canonical fixed-three-value instance of.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -347,8 +347,8 @@ export const nodes: KnowledgeNode[] = [
       "'sorted' or 'monotonic' appears in the problem statement",
     ],
     complexityNotes: "O(log n) time, O(1) space iteratively (O(log n) if implemented recursively).",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "lower-bound",
@@ -366,7 +366,7 @@ export const nodes: KnowledgeNode[] = [
       "count of elements strictly less than target",
     ],
     complexityNotes: "O(log n) time, O(1) space. The boundary-search building block for first-occurrence and search-insert-position.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -385,7 +385,7 @@ export const nodes: KnowledgeNode[] = [
       "count of elements less than or equal to target",
     ],
     complexityNotes: "O(log n) time, O(1) space. Paired with lower-bound to compute the count/range of equal elements in O(log n).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -403,7 +403,7 @@ export const nodes: KnowledgeNode[] = [
       "leftmost matching element under a monotonic predicate",
     ],
     complexityNotes: "O(log n) — lower_bound(target) applied and then verified equal to target.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -421,7 +421,7 @@ export const nodes: KnowledgeNode[] = [
       "rightmost matching element under a monotonic predicate",
     ],
     complexityNotes: "O(log n) — upper_bound(target) minus one, then verified equal to target.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -439,7 +439,7 @@ export const nodes: KnowledgeNode[] = [
       "return the index if found, otherwise the insertion point",
     ],
     complexityNotes: "O(log n) — a direct application of lower-bound.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -457,7 +457,7 @@ export const nodes: KnowledgeNode[] = [
       "determine which half is sorted at each step, then decide which half to search",
     ],
     complexityNotes: "O(log n) time, O(1) space. Duplicates (allowing arr[lo] == arr[mid] == arr[hi]) degrade worst case to O(n).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -474,7 +474,7 @@ export const nodes: KnowledgeNode[] = [
       "binary search using the 'slope' at mid to decide direction",
     ],
     complexityNotes: "O(log n) time by always moving toward the neighbor with the larger value; O(1) space.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -492,7 +492,7 @@ export const nodes: KnowledgeNode[] = [
       "staircase search starting from a corner when only rows/columns are sorted (not globally)",
     ],
     complexityNotes: "O(log(m*n)) for a fully sorted matrix via flattened-index binary search; O(m+n) staircase search when only row/column order holds.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -511,7 +511,7 @@ export const nodes: KnowledgeNode[] = [
       "binary search over a range of possible answers, not over array indices",
     ],
     complexityNotes: "O(log(range) * cost-of-feasibility-check) — the feasibility predicate must be monotonic over the answer range for this to be valid.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -530,7 +530,7 @@ export const nodes: KnowledgeNode[] = [
       "'binary search the answer, verify with a greedy/simulation check'",
     ],
     complexityNotes: "Same technique as binary-search-on-answer under its classical algorithms-literature name; no distinct implementation.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -548,7 +548,7 @@ export const nodes: KnowledgeNode[] = [
       "binary search on a function's truth value, not on stored data",
     ],
     complexityNotes: "O(log(range)) once the predicate is confirmed monotonic; identifying/proving monotonicity is the hard part, not the search loop itself.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -565,7 +565,7 @@ export const nodes: KnowledgeNode[] = [
       "discard one third of the range each iteration instead of one half",
     ],
     complexityNotes: "O(log n) time but with a larger constant than binary search (two comparisons per iteration); requires strict unimodality, otherwise incorrect.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -586,8 +586,8 @@ export const nodes: KnowledgeNode[] = [
       "process nested structures from the innermost outward",
     ],
     complexityNotes: "push/pop/peek all O(1). Array- or linked-list-backed.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "queue",
@@ -603,8 +603,8 @@ export const nodes: KnowledgeNode[] = [
       "process items in the order they were added",
     ],
     complexityNotes: "enqueue/dequeue O(1) amortized (with a proper ring-buffer or linked implementation; a naive array shift is O(n)).",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "circular-queue",
@@ -622,7 +622,7 @@ export const nodes: KnowledgeNode[] = [
       "'design circular queue/buffer'",
     ],
     complexityNotes: "O(1) enqueue/dequeue with fixed O(k) space for capacity k; avoids the O(n) shifting a naive array queue needs.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -639,7 +639,7 @@ export const nodes: KnowledgeNode[] = [
       "double-ended queue needed instead of a plain stack or queue",
     ],
     complexityNotes: "push/pop O(1) at both ends (amortized for a dynamic-array-backed implementation).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -658,7 +658,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["histogram-problems"],
     complexityNotes: "O(n) total time — each element is pushed and popped at most once, despite the nested-looking pop loop.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -677,8 +677,8 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["next-greater-element"],
     complexityNotes: "O(n) total time — amortized single push/pop per element.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "monotonic-queue",
@@ -695,7 +695,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["maximum-minimum-segment"],
     complexityNotes: "O(n) total time using a deque that stores indices and evicts both stale (out-of-window) and dominated elements.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -713,7 +713,7 @@ export const nodes: KnowledgeNode[] = [
       "'basic calculator' style problem",
     ],
     complexityNotes: "O(n) time with two stacks (values and operators) or a single stack plus running sign/precedence tracking.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -730,7 +730,7 @@ export const nodes: KnowledgeNode[] = [
       "operator-precedence stack-based evaluation",
     ],
     complexityNotes: "O(n) time to convert or evaluate with a single operand stack (and operator stack for conversion).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -749,7 +749,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["parentheses-matching"],
     complexityNotes: "O(n) time, O(n) space worst case. The technique node here; the concrete problem shape it solves is tracked separately as 'parentheses-matching'.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -767,7 +767,7 @@ export const nodes: KnowledgeNode[] = [
       "auxiliary stack tracks the running minimum alongside the main stack",
     ],
     complexityNotes: "O(1) for push/pop/getMin, O(n) space for the auxiliary min-tracking structure.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -785,7 +785,7 @@ export const nodes: KnowledgeNode[] = [
       "symmetric structure to min-stack, tracking a running maximum",
     ],
     complexityNotes: "O(1) for push/pop/peekMax; popMax is O(n) with a plain auxiliary stack, or O(log n) with an ordered structure (e.g. sorted map) backing it.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -803,7 +803,7 @@ export const nodes: KnowledgeNode[] = [
       "min/max stack implemented as a paired auxiliary stack",
     ],
     complexityNotes: "O(1) amortized per operation for the classic two-stack queue (each element moves between stacks at most once).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -824,7 +824,7 @@ export const nodes: KnowledgeNode[] = [
       "merge/remove/insert operations that could affect the list's head",
     ],
     complexityNotes: "O(1) extra space and time overhead; purely a code-simplification technique, not an asymptotic optimization.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -842,7 +842,7 @@ export const nodes: KnowledgeNode[] = [
       "avoid null checks entirely at both ends of the list (e.g. LRU cache implementation)",
     ],
     complexityNotes: "O(1) overhead; distinct from a one-off dummy-node in that the sentinel is a permanent structural fixture of the list, not created and discarded per call.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -859,8 +859,8 @@ export const nodes: KnowledgeNode[] = [
       "reverse the whole list as a subroutine of a larger problem",
     ],
     complexityNotes: "O(n) time, O(1) space iteratively (O(n) call-stack space if done recursively).",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "reverse-sublist",
@@ -877,7 +877,7 @@ export const nodes: KnowledgeNode[] = [
       "reverse a bounded portion of the list in place, reconnecting both ends",
     ],
     complexityNotes: "O(n) time, O(1) space — same three-pointer reversal, scoped to a subrange with careful reconnection to the untouched parts.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -894,7 +894,7 @@ export const nodes: KnowledgeNode[] = [
       "combine multiple sorted lists while preserving overall order",
     ],
     complexityNotes: "O(n+m) for two lists; O(N log k) for k lists using a heap, or O(N*k) with pairwise merging, where N is total nodes.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -911,7 +911,7 @@ export const nodes: KnowledgeNode[] = [
       "divide-and-conquer setup for merge sort on a linked list",
     ],
     complexityNotes: "O(n) time, O(1) space — typically uses the fast/slow pointer technique to find the midpoint without a length pre-pass.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -928,7 +928,7 @@ export const nodes: KnowledgeNode[] = [
       "two pointers moving at different speeds are guaranteed to meet inside a cycle",
     ],
     complexityNotes: "O(n) time, O(1) space. The general pattern name for applying fast/slow pointers to loop detection; see 'floyds-algorithm' for the named technique and 'find-cycle-start' for locating the entry point.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -946,7 +946,7 @@ export const nodes: KnowledgeNode[] = [
       "two pointers at different speeds provably meet inside a cycle, then a reset-to-head phase finds the start",
     ],
     complexityNotes: "O(n) time, O(1) space. This is the specific named algorithmic technique underlying the 'cycle-detection' pattern; 'find-cycle-start' is its extension for locating the entry node. Kept as a distinct node from cycle-detection because it names the concrete two-phase procedure, while cycle-detection names the general recognition pattern.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -964,7 +964,7 @@ export const nodes: KnowledgeNode[] = [
       "after the fast/slow pointers meet, reset one pointer to head and advance both one step at a time",
     ],
     complexityNotes: "O(n) time, O(1) space. Correctness relies on the distance-doubling relationship Floyd's meeting point establishes between head, cycle start, and meeting node.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -982,7 +982,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["palindrome"],
     complexityNotes: "O(n) time, O(1) space, single pass — avoids a separate length-counting pass.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -998,7 +998,7 @@ export const nodes: KnowledgeNode[] = [
       "switch each pointer to the other list's head once it reaches the end, to equalize traversed distance",
     ],
     complexityNotes: "O(n+m) time, O(1) space with the two-pointer length-equalization trick — avoids needing to compute lengths up front or use extra memory.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1015,7 +1015,7 @@ export const nodes: KnowledgeNode[] = [
       "rearrange nodes into a specific alternating pattern in place",
     ],
     complexityNotes: "O(n) time, O(1) space — composes find-middle, reverse-second-half, and interleave-merge as three sequential O(n) passes.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1031,7 +1031,7 @@ export const nodes: KnowledgeNode[] = [
       "the unifying principle behind reverse-list, reorder, merge-lists, and clone-linked-structure",
     ],
     complexityNotes: "Not an algorithm itself but the general discipline of manipulating structure via pointer rewiring rather than value copying — the throughline across nearly every O(1)-space linked-list pattern.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1048,7 +1048,7 @@ export const nodes: KnowledgeNode[] = [
       "interleave cloned nodes next to originals, or use an old-node-to-new-node hash map",
     ],
     complexityNotes: "O(n) time. O(n) space with a hash map approach, or O(1) extra space with the interleave-then-split technique (weave copies into the original list, wire random pointers, then unweave).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 ]

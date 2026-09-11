@@ -36,8 +36,8 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["dfs", "bfs", "flood-fill", "union-find"],
     disambiguation:
       "All four candidates correctly count/label islands — the choice is about what else the problem needs. Pure counting on a static grid: DFS or BFS, either works, pick whichever you find easier to write iteratively (DFS risks stack depth on huge grids, so BFS is safer at scale). Need island SIZE per component too: flood fill (DFS/BFS variant that accumulates a counter while marking). Grid changes incrementally over time (e.g. land is added one cell per query and you must answer 'how many islands now' after each addition): union-find, because DFS/BFS would require a full O(rows*cols) re-scan per query while union-find updates in near-constant time per added cell.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "connected-groups",
@@ -65,7 +65,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["connected-components", "union-find", "dfs", "bfs"],
     disambiguation:
       "The relationships are given all at once as a static adjacency list/matrix: plain DFS/BFS traversal counting unvisited-node starts is simplest. Relationships (edges/unions) arrive incrementally, one at a time, and you need to answer 'are X and Y connected' or 'how many groups' after each addition: union-find, because re-running DFS/BFS after every edge would be O(V+E) per query versus near-constant per union. Need to know each node's specific group id afterward for repeated lookups (not just a count): component-labeling (a DFS/BFS pass that assigns a label array) or union-find's find() as the lookup.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -94,7 +94,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["topological-sort"],
     disambiguation:
       "This shape is almost always topological sort once you confirm the relationships form a directed graph of 'A before B' pairs. The remaining choice is Kahn's (BFS, indegree array — preferred when you also need to detect a cycle as a natural byproduct of 'not all nodes got dequeued', and when recursion depth on a large graph is a concern) versus DFS-based topo sort (preferred when the graph is already being explored recursively for another reason, or the ordering needs to be built via post-order finish times).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -122,7 +122,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["topological-sort", "directed-cycle-detection"],
     disambiguation:
       "Asked only 'can all courses be finished' (a yes/no): directed cycle detection alone suffices, no need to construct the full ordering. Asked for the actual valid course order (or 'one valid order'): full topological sort, which also detects impossibility (a cycle) as a side effect of not being able to produce a complete ordering — so in practice, just running topological sort covers both variants of this shape.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -149,7 +149,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["bfs", "dijkstra", "bellman-ford", "floyd-warshall", "a-star"],
     disambiguation:
       "Decide in this order. (1) Are edges unweighted (every move costs the same)? Use BFS — it's the cheapest correct option and anything else is overkill. (2) Are weights present but all non-negative, single source? Use Dijkstra. (3) Can weights be negative, single source? Use Bellman-Ford (and check its negative-cycle flag). (4) Do you need shortest paths between ALL pairs, not just from one source, on a small/dense graph? Use Floyd-Warshall (O(V^3)) rather than running Dijkstra V times unless the graph is sparse enough for that to be cheaper. (5) Is there a single known target and a reliable admissible distance heuristic (e.g. grid Euclidean/Manhattan distance)? A* often prunes the search far faster than Dijkstra in practice, though it never beats Dijkstra's worst case.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -175,8 +175,8 @@ export const problemShapes: ProblemShape[] = [
     ],
     candidatePatternIds: ["bfs"],
     disambiguation:
-      "This shape is BFS, full stop, as long as every move/step/transition has identical cost — do not reach for Dijkstra here, since Dijkstra's heap overhead (O(E log V)) buys nothing over BFS's O(V+E) when all weights are equal, and BFS's layer order already equals distance order. Only switch to Dijkstra if the problem quietly introduces different costs per move (e.g. some moves cost 2, or terrain-based costs) — re-read the constraints for that before assuming this shape.",
-    languageTemplatesAvailable: ["javascript", "python"],
+      "BFS is the standard choice when every move has the same positive cost and the reachable state space is manageable; bidirectional BFS may reduce exploration when reverse moves and a target are available. Ordinary BFS uses layer order as distance order — do not reach for Dijkstra here, since Dijkstra's heap overhead (O(E log V)) buys nothing over BFS's O(V+E) when all weights are equal, and BFS's layer order already equals distance order. Only switch to Dijkstra if the problem quietly introduces different costs per move (e.g. some moves cost 2, or terrain-based costs) — re-read the constraints for that before assuming this shape.",
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -200,10 +200,10 @@ export const problemShapes: ProblemShape[] = [
       "cost to travel between",
       "network delay time",
     ],
-    candidatePatternIds: ["dijkstra", "bellman-ford"],
+    candidatePatternIds: ["dijkstra", "bellman-ford", "0-1-bfs", "dag-shortest-path", "floyd-warshall"],
     disambiguation:
       "The deciding question is: can any edge weight be negative? All weights non-negative → Dijkstra (O(E log V), the faster choice, always preferred when legal). Any edge can be negative, or you must actively detect a negative-weight cycle → Bellman-Ford (O(V*E), slower but correct where Dijkstra silently gives wrong answers). A secondary question: is the graph acyclic (a DAG)? If so, skip both and use DAG shortest path (O(V+E), one topological-order relaxation pass) — it tolerates negative weights and beats both alternatives on a known-acyclic graph.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -230,7 +230,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["bfs", "bidirectional-bfs"],
     disambiguation:
       "Each word is an implicit graph node, each valid one-letter-change to another dictionary word is an unweighted edge, so plain BFS gives the minimum transformation count. Switch to bidirectional BFS specifically when the dictionary is large and/or the word length makes the per-word branching factor large (26 * word-length candidate neighbors per node) — searching simultaneously from both the start and end word and stopping when frontiers meet cuts the effective search space roughly in half the exponent, which matters once single-direction BFS would visit too many words before reaching the target.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -256,8 +256,8 @@ export const problemShapes: ProblemShape[] = [
     ],
     candidatePatternIds: ["maximum-flow"],
     disambiguation:
-      "Once you've confirmed the problem is genuinely about a capacity-constrained network (as opposed to a disguised shortest-path or matching problem), the choice is which max-flow algorithm to implement: Edmonds-Karp (O(V*E^2)) is the simplest correct polynomial choice for small-to-medium graphs; Dinic's (O(V^2 E), O(E*sqrt(V)) on unit-capacity graphs) is worth the extra implementation complexity only when constraints are large. If costs per unit of flow are also given (not just capacities), this is actually min-cost max-flow, a different node, not plain maximum flow.",
-    languageTemplatesAvailable: ["javascript", "python"],
+      "Once you've confirmed the problem is genuinely about a capacity-constrained network (as opposed to a disguised shortest-path or matching problem), the choice is which max-flow algorithm to implement: Edmonds-Karp (O(V*E^2)) is the simplest correct polynomial choice for small-to-medium graphs; Dinic's (O(V^2 E), O(E*sqrt(V)) on unit networks (such as the standard bipartite-matching reduction)) is worth the extra implementation complexity only when constraints are large. If costs per unit of flow are also given (not just capacities), this is actually min-cost max-flow, a different node, not plain maximum flow.",
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -284,7 +284,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["bipartite-matching", "hungarian-algorithm"],
     disambiguation:
       "If every valid pairing is equally good and the goal is simply to maximize the COUNT of matched pairs (unweighted): bipartite matching, implemented via Kuhn's algorithm (O(V*E), fine for interview-sized inputs) or Hopcroft-Karp (O(E*sqrt(V)), needed only at large scale). If each possible pairing carries a different cost/value and the goal is to minimize total cost (or maximize total value) over a full assignment: this is the weighted Assignment Problem, solved by the Hungarian algorithm (O(V^3)) or, equivalently, min-cost max-flow — using plain bipartite matching here would ignore the weights and give a wrong (or merely feasible, not optimal) answer.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -311,7 +311,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["graph-coloring", "bipartite-checking"],
     disambiguation:
       "If the constraint is strictly pairwise 'these two cannot be together' and you only need to know whether TWO groups suffice: bipartite checking (2-coloring) — O(V+E), polynomial, always decidable via BFS/DFS. If more than two groups/colors/time-slots may be needed (k-coloring for k >= 3, e.g. exam-timetabling with more than two slots): general graph coloring, which is NP-complete to solve optimally — expect backtracking with pruning, not a polynomial guarantee, and confirm the problem's constraints (small V) before committing to that approach.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 ]

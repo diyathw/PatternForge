@@ -52,7 +52,20 @@ export const allProblemShapes: ProblemShape[] = [
   ...advancedCPProblemShapes,
 ]
 
-export const allRelationships: Relationship[] = relationships
+// Materialize structural references so the visual graph and learning order share
+// the same edges as the searchable records, without duplicate parallel edges.
+const structuralRelationships: Relationship[] = [...allNodes, ...allProblemShapes].flatMap((node) => [
+  ...(node.parent ? [{ from: node.id, to: node.parent, relation: "variant-of" as const }] : []),
+  ...(node.prerequisites ?? []).map((id) => ({ from: id, to: node.id, relation: "prerequisite-of" as const })),
+  ...(node.commonProblemShapes ?? []).map((id) => ({ from: node.id, to: id, relation: "useful-for" as const })),
+])
+const shapeRelationships: Relationship[] = allProblemShapes.flatMap((shape) =>
+  shape.candidatePatternIds.map((id) => ({ from: shape.id, to: id, relation: "commonly-solved-by" as const })),
+)
+export const allRelationships: Relationship[] = [...new Map(
+  [...relationships, ...structuralRelationships, ...shapeRelationships].map((edge) =>
+    [`${edge.from}:${edge.relation}:${edge.to}`, edge] as const),
+).values()]
 
 export const allComplexityHeuristics: ComplexityHeuristic[] = advancedCPComplexityHeuristics
 

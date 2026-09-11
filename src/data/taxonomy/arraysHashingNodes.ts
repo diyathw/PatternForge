@@ -39,7 +39,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["majority-element", "range-sum"],
     complexityNotes:
       "O(n) time, O(1) extra space. The baseline every other array technique is compared against; reach for it before anything fancier when a single pass with a running variable already answers the question.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -64,8 +64,8 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n) time with a hash map; O(n + k) with a fixed counting array when the value domain (k) is small and known, e.g. 26 lowercase letters.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "hash-map",
@@ -92,7 +92,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(1) average time for insert/lookup/delete, O(n) worst case under pathological hashing; O(n) space. Covers what would otherwise be a separate 'Hash Map Lookup' entry — e.g. the two-sum-style complement check is just a hash map lookup during a single scan, not a distinct technique.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -116,7 +116,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(1) average membership test/insert; O(n) space. Functionally a hash map with unit values — covers what would otherwise be a separate 'Hash Set Membership' entry: use a set instead of a map whenever only 'have I seen this key' matters, with no value to store alongside it.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -142,7 +142,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n log n) time from the sort dominates the O(n) scan that follows. Trades the O(n) time (but O(n) space) of a hash-based approach for O(1) extra space when sorting in place, or for simpler code.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -162,7 +162,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["anagram", "frequency-problems", "majority-element"],
     complexityNotes:
       "O(n + k) time and O(k) space where k is the value range. Faster with a lower constant than a hash map when k is small and known, but unusable when the value domain is large, sparse, or unbounded (fall back to a hash map, or coordinate-compress first).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -188,8 +188,8 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n) time (or O(n log n) if a sort is required first) versus O(n^2) brute force; O(1) extra space. The umbrella technique for opposite-direction, same-direction, read/write, and fast/slow pointer variants below.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "opposite-direction-two-pointers",
@@ -209,7 +209,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["pair-sum", "palindrome", "triplet-sum"],
     complexityNotes:
       "O(n) single pass after any needed O(n log n) sort; the two pointers together traverse at most n elements total, never O(n^2).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -230,7 +230,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["pair-sum", "subarray", "subsequence"],
     complexityNotes:
       "O(n + m) time when merging two sequences of length n and m; O(n) when both pointers walk the same array.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -251,7 +251,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["duplicate-detection", "subarray"],
     complexityNotes:
       "O(n) time, O(1) extra space; the write pointer only advances when the read pointer finds a value worth keeping, so writes never outrun reads.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -272,8 +272,8 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["duplicate-detection", "repeating-number"],
     complexityNotes:
       "O(n) time, O(1) space. Classically applied to linked lists (cycle detection, middle node) but also solves array problems that can be reframed as an implicit linked list, e.g. finding a duplicate via Floyd's when values in [1, n] act as 'next' pointers.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "sliding-window",
@@ -297,8 +297,8 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "O(n) — each element enters and leaves the window at most once — versus O(n*k) or O(n^2) brute force. Only valid when the window's validity changes monotonically as pointers move right; breaks down once negative numbers make sums non-monotonic (use prefix sum + hash map instead).",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "fixed-sliding-window",
@@ -317,7 +317,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["subarray", "maximum-minimum-segment"],
     complexityNotes:
       "O(n) time; slide by adding the incoming element and removing the outgoing one instead of recomputing the window from scratch each time.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -337,7 +337,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["longest-shortest-segment", "substring", "subarray"],
     complexityNotes:
       "O(n) amortized — the right and left pointers each move forward at most n times total across the whole run, even though the code looks like nested loops.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -357,8 +357,8 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["range-sum", "subarray", "consecutive-sequence"],
     complexityNotes:
       "O(n) preprocessing, O(1) per range-sum query afterward, versus O(n) per query recomputed from scratch. Combine with a hash map (prefix-sum value -> count or first index) to solve 'subarray sums to k' in O(n) even with negative numbers present, where sliding window fails.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "suffix-sum",
@@ -377,7 +377,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["range-sum", "subarray"],
     complexityNotes:
       "O(n) preprocessing, O(1) lookup; the mirror image of prefix sum, often computed alongside it (e.g. product of array except self).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -397,7 +397,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["range-sum"],
     complexityNotes:
       "O(n) time, O(1) extra space if prefix and suffix products are folded directly into the output array; must special-case zeros explicitly since dividing by a running product breaks on them.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -417,7 +417,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["range-sum"],
     complexityNotes:
       "O(1) per range update, O(n) to materialize final values with one prefix-sum pass at the end — the inverse trick of prefix sum: prefix sum answers range-sum reads fast, a difference array answers range-update writes fast.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -437,7 +437,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["range-sum", "subarray"],
     complexityNotes:
       "O(n) time, O(1) space when only the current running total is needed rather than the full prefix-sum array; the entry point learners reach for before generalizing to prefix sum.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -457,8 +457,8 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["subarray", "maximum-minimum-segment"],
     complexityNotes:
       "O(n) time, O(1) space; a specialized 1D dynamic-programming recurrence (bestEndingHere = max(currentElement, bestEndingHere + currentElement)). Reach for it specifically when the ask is 'maximum sum contiguous subarray' — not general range sums (use prefix sum) and not cases where negatives make plain sliding window invalid but the target isn't a max-sum question (use prefix sum + hash map).",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "partitioning",
@@ -477,7 +477,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["subarray"],
     complexityNotes:
       "O(n) time, O(1) extra space for a single-pivot two-way partition; the building block behind quicksort's partition step, quickselect, and the three-way Dutch National Flag variant.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -497,7 +497,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["subarray"],
     complexityNotes:
       "O(n) time, O(1) space, single pass with three pointers (low, mid, high). Strictly better than a general O(n log n) sort when the value domain is known to be exactly three categories.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -516,7 +516,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["missing-number", "repeating-number", "duplicate-detection"],
     complexityNotes:
       "O(n) time, O(1) extra space — only applicable when values are a known contiguous range that can double as valid array indices. Swap each value to its home index (value v belongs at index v-1), then scan once for mismatches.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -536,7 +536,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["missing-number", "repeating-number"],
     complexityNotes:
       "O(n) time, O(1) space; a lighter-weight cousin of full cyclic-sort swapping — mark presence in place (e.g. negate nums[abs(x)-1]) instead of physically swapping every element to its home position.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -555,7 +555,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["range-sum"],
     complexityNotes:
       "O(n log n) to sort and de-duplicate, then a hash map assigns each value its rank in O(1) per lookup. A preprocessing step that makes counting-array, Fenwick-tree, or segment-tree techniques usable when raw values are too large or sparse to index directly.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 ]

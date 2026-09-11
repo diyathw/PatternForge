@@ -14,7 +14,7 @@ export const relationships: Relationship[] = [
   { from: "anagram", to: "frequency-counting", relation: "commonly-solved-by" },
   { from: "anagram", to: "hash-map", relation: "uses" },
   { from: "frequency-counting", to: "hash-map", relation: "uses" },
-  { from: "anagram", to: "sorting", relation: "alternative-to" },
+  { from: "anagram", to: "sorting", relation: "commonly-solved-by" },
 
   // --- 3Sum -> Sorting -> Two Pointers -> K-Sum ---
   { from: "triplet-sum", to: "sorting", relation: "uses" },
@@ -29,7 +29,7 @@ export const relationships: Relationship[] = [
   // --- Dijkstra -> Graph -> Greedy -> Priority Queue ---
   { from: "dijkstra", to: "greedy", relation: "uses" },
   { from: "dijkstra", to: "heap", relation: "uses" },
-  { from: "dijkstra", to: "bfs", relation: "optimization-of" },
+  { from: "dijkstra", to: "bfs", relation: "alternative-to" },
 
   // --- Kruskal -> Greedy -> Sorting -> Union Find ---
   { from: "kruskal", to: "greedy", relation: "uses" },
@@ -53,7 +53,7 @@ export const relationships: Relationship[] = [
   { from: "range-sum", to: "prefix-sum", relation: "commonly-solved-by" },
   { from: "range-sum", to: "fenwick-tree", relation: "commonly-solved-by" },
   { from: "range-sum", to: "segment-tree", relation: "commonly-solved-by" },
-  { from: "fenwick-tree", to: "prefix-sum", relation: "optimization-of" },
+  { from: "fenwick-tree", to: "prefix-sum", relation: "alternative-to" },
   { from: "segment-tree", to: "fenwick-tree", relation: "alternative-to" },
 
   // --- Other useful composition chains ---

@@ -40,3 +40,9 @@ Run tests matching a name: `npx vitest run -t "some test name"`
 - `src/types/domain.ts` is edited only when adding a genuinely new cross-cutting shape or field; prefer extending an existing interface over creating a parallel one.
 - Exercise prompts and problem summaries are original writing, not copied verbatim from LeetCode or any other source.
 - Pattern-recognition content must avoid oversimplified absolute claims (e.g. "subarray always means sliding window", "weighted graph means Dijkstra") — call out the exceptions (prefix sum/Kadane/DP for subarrays; Bellman-Ford for negative weights) explicitly.
+
+## Session handoff
+
+Before starting work, read `docs/PROGRESS.md` for the current implementation state, validation evidence, active ownership, and exact next steps. Read `docs/IMPLEMENTATION_PLAN.md` for agent responsibilities and integration rules, and `docs/CURRICULUM_QA.md` for the foundation audit.
+
+Update `docs/PROGRESS.md` at milestones and before ending a session or approaching usage/context limits. Record unfinished work and failing checks honestly so either Claude or Codex can resume without repeating completed work. Background agents do not survive a session handoff; inspect their saved files before relaunching them.

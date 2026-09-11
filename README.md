@@ -1,32 +1,42 @@
-# React + TypeScript + Vite
+# PatternForge
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A React + TypeScript learning SPA for recognizing algorithmic structure across interviews, university algorithms and competitive programming. The curriculum distinguishes algorithms, patterns, data structures, strategies and recurring problem shapes; it does not claim a fixed universal number of patterns.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Open the local URL printed by Vite. Practice defaults to JavaScript and supports Python. Language choice, exercise drafts and learner progress are saved in this browser's local storage. There is no account or backend synchronization.
+
+## Development checks
+
+```bash
+npm run typecheck
+npm run lint
+npm test
+npm run build
+npm run preview
+```
+
+## Architecture and handoff
+
+- [Current progress and exact resume steps](docs/PROGRESS.md)
+- [Implementation phases and agent ownership](docs/IMPLEMENTATION_PLAN.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Shared content schema](docs/CONTENT_SCHEMA.md)
+- [Authoring guide](docs/AUTHORING_GUIDE.md)
+- [Curriculum audit](docs/CURRICULUM_QA.md)
+- [Generated taxonomy](docs/TAXONOMY.md)
+
+Canonical curriculum IDs live in `src/data/taxonomy/`; shared domain interfaces live in `src/types/domain.ts`. New curriculum content must reference those IDs. Fully developed core lessons and lighter specialist entries coexist; the application should indicate actual available content.
+
+## Code execution
+
+JavaScript and Python run in disposable Web Workers with cancellation and time limits. Python loads Pyodide lazily; its matching runtime files are included under `public/pyodide/`. Monaco uses local package assets. Worker execution keeps learner code off the UI thread, but is not a hardened isolation boundary for deliberately hostile code. Local hidden-style fixtures are pedagogical checks and are inspectable by the learner.
+
+When upgrading Pyodide, refresh `pyodide.asm.mjs`, `pyodide.asm.wasm`, `pyodide-lock.json`, and `python_stdlib.zip` in `public/pyodide/` from the installed package together, then validate Python in a production preview.
+
+Mastery scores are transparent learning heuristics, not validated measurements of ability. Constraint-based recommendations explain assumptions and alternatives; learners must still verify correctness and complexity.

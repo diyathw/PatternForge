@@ -30,7 +30,7 @@ export const problemShapes: ProblemShape[] = [
     disambiguation:
       "First ask: does the array change between queries (updates interleaved with queries)? If STATIC (no updates): a 2D/1D prefix sum answers pure sum queries in O(1) after O(n) preprocessing; a sparse table answers min/max/gcd (idempotent) queries in O(1) after O(n log n) preprocessing and is the right default for static range-min/max. If DYNAMIC (point or range updates must be supported between queries): prefix sum and sparse table no longer work efficiently (rebuilding costs O(n) per update) — use a Fenwick tree for point-update/range-sum (simplest to code, O(log n) both ops), or a segment tree when the query is not sum (min/max/gcd/xor) or when both range updates and range queries are needed (segment tree, optionally with lazy propagation).",
     commonProblemShapes: [],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -55,7 +55,7 @@ export const problemShapes: ProblemShape[] = [
     disambiguation:
       "First ask: are queries interleaved with updates, or do all updates happen first and queries (or a single final readout) happen after? If updates are OFFLINE — apply all range updates, then read the final array once (or take a prefix sum at the end) — a difference array does each update in O(1) and reconstructs the final array in O(n) total, no tree needed. If range updates and range QUERIES are interleaved (an update, then a query, then another update, ...) and need to reflect current state each time, a difference array cannot answer point/range reads efficiently mid-stream — use a lazy segment tree instead, which supports O(log n) range update and O(log n) range query in any order.",
     commonProblemShapes: [],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -80,7 +80,7 @@ export const problemShapes: ProblemShape[] = [
     disambiguation:
       "The defining constraint is 'no updates' — if that holds, a sparse table is essentially always the right call for idempotent range aggregates (min, max, gcd, and, or): O(n log n) preprocessing, O(1) per query. If updates are later added to the problem, this stops being this shape — it becomes Dynamic Range Sum / Range Query territory (Fenwick tree or segment tree) instead.",
     commonProblemShapes: [],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -105,7 +105,7 @@ export const problemShapes: ProblemShape[] = [
     disambiguation:
       "Both structures solve this in O(log n) per operation. Default to a Fenwick tree when the query is a plain sum (or any operation with a well-defined inverse, so ranges can be derived by subtracting two prefix queries) — it's simpler to code and has a smaller constant factor. Reach for a segment tree instead when the aggregate isn't invertible (min, max, gcd) or when the problem also needs range updates (pair with lazy propagation) or richer combine logic than a Fenwick tree's prefix-based trick can express.",
     commonProblemShapes: [],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -131,7 +131,7 @@ export const problemShapes: ProblemShape[] = [
     disambiguation:
       "The deciding question is: as the candidate answer X increases, does whether X is 'feasible' change monotonically (all infeasible X below some threshold, all feasible X above it, or vice versa)? If feasibility is monotonic in the answer, binary search the answer space directly: binary search over candidate X values, and for each candidate run an O(check(X)) feasibility test, giving O(check(X) * log(range)) total instead of trying every possible X. If feasibility is NOT monotonic (there can be feasible X sandwiched between infeasible ones), binary search on answer is unsound and a different technique (DP, greedy, search) is required instead.",
     commonProblemShapes: [],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 ]

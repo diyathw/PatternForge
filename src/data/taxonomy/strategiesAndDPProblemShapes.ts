@@ -49,7 +49,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["permutations", "backtracking", "bitmask-dp"],
     disambiguation:
       "Use `permutations`/`backtracking` (choose-explore-undo over a used[] set or in-place swapping) when every distinct ordering must actually be enumerated and n is small enough that n! is tractable (roughly n <= 10-12). When the problem only asks for an optimal cost/count over all orderings — not the orderings themselves — and n <= ~20, `bitmask-dp` (state = which elements have been placed) computes the answer in O(2^n * n)-ish time without ever materializing an ordering, which is exponentially cheaper than generating all n! permutations.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -82,7 +82,7 @@ export const problemShapes: ProblemShape[] = [
     ],
     disambiguation:
       "Enumerate every combination itself -> `combinations`/`backtracking` with a start-index guard to avoid order-duplicates. Elements may repeat and must sum exactly to a target while still enumerating every valid combination -> `combination-sum`. When the question only needs whether/how many/the best-value combination of a given size or sum exists — not the actual list of combinations — that's a counting/feasibility/optimization question, which is `01-knapsack`/`subset-sum` DP instead, and is far cheaper than enumerating C(n,k) combinations.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -109,7 +109,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["backtracking", "subset-sum", "01-knapsack", "bitmask-dp"],
     disambiguation:
       "Need to actually list every subset -> `backtracking` (include/exclude recursion, sorted + skip-duplicates for 'Subsets II') or an iterative bitmask enumeration over 0..2^n-1. Need only to know whether some subset (or how many subsets) satisfies a sum/count property, without listing them -> DP (`subset-sum` for boolean reachability, `01-knapsack` for a value-optimizing variant) — dramatically cheaper than materializing 2^n subsets. Need the OPTIMAL value achievable for every possible subset composition simultaneously (n <= ~20) -> `bitmask-dp`, where the mask itself is the DP state.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -142,7 +142,7 @@ export const problemShapes: ProblemShape[] = [
     ],
     disambiguation:
       "Need only feasibility or the optimal sum-difference for a two-group split, with a sum small enough to index (roughly <= 10^4-10^5) -> `subset-sum`/`partition-dp` DP, which reduces the equal-sum case directly to target = totalSum / 2. Need to enumerate ALL valid partitions, split into k > 2 groups with small n, or the partition unit is non-numeric (e.g. palindrome partitioning of a string) -> `backtracking`/`01-knapsack`-style DP over group assignments. A simple sort-then-greedy rule provably yields the optimal split (rare — must verify the greedy-choice property first) -> `greedy`.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -176,7 +176,7 @@ export const problemShapes: ProblemShape[] = [
     ],
     disambiguation:
       "Maximize the COUNT of non-overlapping intervals (no per-interval value) -> `interval-scheduling`/`activity-selection`, greedy sorted by end time. Jobs each have a deadline and a profit, one job per slot -> `deadline-scheduling`, greedy sorted by profit descending, placed in the latest free slot. Intervals carry weights/values and a simple greedy order is NOT provably optimal (e.g. weighted interval scheduling, or a capacity/budget constraint beyond 'no overlap') -> DP over intervals sorted by end time, shaped like `01-knapsack` (take-or-skip each interval, skip forward past whatever it conflicts with).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -203,7 +203,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["bitmask-dp", "bipartite-matching", "greedy"],
     disambiguation:
       "Small n (roughly <= 20) and the goal is an optimal-cost/value one-to-one assignment -> `bitmask-dp`, with the mask tracking which elements on one side are already used. General maximum bipartite matching (unweighted, cardinality only, n can be much larger) -> `bipartite-matching` (graphs track — augmenting-path/Hopcroft-Karp based; referenced by id only, minted elsewhere). A simple sorted-greedy pairing provably achieves the optimum (e.g. pairing two sorted arrays to minimize/maximize the sum of paired differences) -> `greedy`, with an exchange-argument proof.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -230,7 +230,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["backtracking", "word-search", "bitmask-dp", "bfs"],
     disambiguation:
       "Need to enumerate all paths, or find ANY valid path where choices must be undoable to try alternatives -> `backtracking` (DFS with choose/explore/undo, e.g. `word-search`). Need the SHORTEST sequence of transformations in an unweighted state graph -> `bfs` (graphs track; referenced by id only) explored level by level from the start state. The state naturally compresses into a small set of discrete flags (n <= ~20, e.g. 'which keys collected') and an optimal count/cost over that state space is needed -> `bitmask-dp`.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -263,7 +263,7 @@ export const problemShapes: ProblemShape[] = [
     ],
     disambiguation:
       "Default approach is `backtracking` with `constraint-search` (checking validity incrementally at each partial assignment rather than generating everything then filtering). When conflicts can be tracked with O(1)-lookup sets over a small number of constraint dimensions (rows/columns/diagonals) -> `n-queens`-style. When constraints span multiple overlapping groups simultaneously (rows AND columns AND boxes) -> `sudoku-solver`-style, often paired with candidate elimination. Once basic backtracking is too slow for the given constraints, layer `pruning`/branch-and-bound on top rather than switching strategies.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 ]

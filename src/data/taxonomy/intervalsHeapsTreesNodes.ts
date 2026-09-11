@@ -34,8 +34,8 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["interval-overlap"],
     complexityNotes: "Sort by start: O(n log n); single linear merge pass after sorting: O(n).",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "insert-interval",
@@ -53,7 +53,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["interval-overlap"],
     complexityNotes: "O(n) single pass since input is already sorted — no need to re-sort.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -71,7 +71,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["interval-overlap"],
     complexityNotes: "O(m + n) two-pointer scan over both sorted lists.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -89,7 +89,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["interval-overlap"],
     complexityNotes: "O(n log n) sort by end time, then O(n) greedy sweep.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -107,7 +107,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["meeting-scheduling"],
     complexityNotes: "O(n log n): sort start/end times separately, or use a min-heap of end times, O(n) space.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -126,7 +126,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["interval-overlap"],
     complexityNotes: "O(n log n) to sort events; O(n) sweep with a running counter or heap of active intervals.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -141,7 +141,7 @@ export const nodes: KnowledgeNode[] = [
       "tie-breaking rule: process end-events before start-events at the same timestamp (or vice versa, depending on inclusivity)",
       "foundational step before sweep-line or meeting-rooms reasoning",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -159,7 +159,7 @@ export const nodes: KnowledgeNode[] = [
       "generalization of the 1D difference-array trick to interval events",
     ],
     complexityNotes: "O(n + q) total: O(q) to record events, O(n) prefix sum to materialize — versus O(nq) naive.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -176,7 +176,7 @@ export const nodes: KnowledgeNode[] = [
       "ordered structure (sorted list, balanced BST, or segment tree) of existing intervals queried on each insert",
     ],
     complexityNotes: "O(log n) per booking with a sorted structure/BST; O(n) per booking with a naive list scan.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -194,7 +194,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["meeting-scheduling"],
     complexityNotes: "O(n log n) via sweep-line event sort; the running counter's max is the answer.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -215,8 +215,8 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["top-k", "kth-largest-kth-smallest"],
     complexityNotes: "Build: O(n). Push/pop: O(log n). Peek: O(1).",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "max-heap",
@@ -232,7 +232,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["top-k", "kth-largest-kth-smallest"],
     complexityNotes: "Build: O(n). Push/pop: O(log n). Peek: O(1).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -250,7 +250,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["kth-largest-kth-smallest", "top-k"],
     complexityNotes: "O(n log k) maintaining a size-k heap — beats O(n log n) full sort when k << n.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -268,7 +268,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "O(log n) per insertion, O(1) median lookup via the two heap tops.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -286,7 +286,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "O(log n) per insert/rebalance.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -304,7 +304,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "O(n log k) where n is total elements and k is the number of lists.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -323,7 +323,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "O(n log k), n = total elements across all k arrays.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -341,7 +341,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["meeting-scheduling"],
     complexityNotes: "Typically O(n log n) — one heap push/pop per task/event.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -359,7 +359,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "O(E log V) style bound when applied to graphs; depends on branching factor for general state-space search.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -376,7 +376,7 @@ export const nodes: KnowledgeNode[] = [
       "used when a language's heap library has no efficient arbitrary-delete",
     ],
     complexityNotes: "Amortized O(log n) per operation; stale entries cost extra memory until popped and skipped.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -393,7 +393,7 @@ export const nodes: KnowledgeNode[] = [
       "maintains a value-to-heap-position map alongside the heap array",
     ],
     complexityNotes: "O(log n) update/decrease-key vs O(n) scan-to-find in a plain heap.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -412,8 +412,8 @@ export const nodes: KnowledgeNode[] = [
       "\"explore as deep as possible\", root-to-leaf reasoning",
       "recursive or explicit-stack traversal of a tree",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "preorder-traversal",
@@ -429,7 +429,7 @@ export const nodes: KnowledgeNode[] = [
       "natural for copying/serializing a tree top-down",
       "matches the order needed to rebuild a tree from a root-first encoding",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -446,7 +446,7 @@ export const nodes: KnowledgeNode[] = [
       "produces sorted order for a binary search tree",
       "used to validate a BST or find the kth smallest element",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -463,7 +463,7 @@ export const nodes: KnowledgeNode[] = [
       "children's results must be known before the node can compute its own (bottom-up)",
       "natural for deleting a tree or computing subtree aggregates (height, diameter, sum)",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -478,8 +478,8 @@ export const nodes: KnowledgeNode[] = [
       "\"shortest path in an unweighted tree/graph\", level-aware processing",
       "queue-driven traversal, not recursion",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "level-order-traversal",
@@ -495,7 +495,7 @@ export const nodes: KnowledgeNode[] = [
       "process the entire queue snapshot as one level before moving to the next",
       "level-by-level output, e.g. binary tree level order traversal",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -511,7 +511,7 @@ export const nodes: KnowledgeNode[] = [
       "\"zigzag level order traversal\" — alternate left-to-right and right-to-left per level",
       "level-order BFS plus a direction flag or reversal on alternate levels",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -526,7 +526,7 @@ export const nodes: KnowledgeNode[] = [
       "combining child results (e.g. max of children, sum of children, boolean AND) at each node",
       "the core design question behind height, diameter, path-sum, and tree-DP solutions",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -542,7 +542,7 @@ export const nodes: KnowledgeNode[] = [
       "\"maximum depth of binary tree\", \"balanced binary tree\" checks",
       "computed bottom-up via postorder recursion",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -559,7 +559,7 @@ export const nodes: KnowledgeNode[] = [
       "track a running max separately from the height returned to the parent",
     ],
     complexityNotes: "O(n) single postorder DFS.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -576,7 +576,7 @@ export const nodes: KnowledgeNode[] = [
       "\"path sum III\" variants use a prefix-sum hash map for non-root-to-leaf paths",
     ],
     commonProblemShapes: [],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -592,7 +592,7 @@ export const nodes: KnowledgeNode[] = [
       "backtracking-style DFS that appends the current node and pops it on the way back up",
       "binary tree paths, path sum II",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -611,7 +611,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["tree-ancestor-queries"],
     complexityNotes: "O(n) per query with plain DFS; O(log n) per query after O(n log n) binary-lifting preprocessing.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -628,7 +628,7 @@ export const nodes: KnowledgeNode[] = [
       "often optimized by serializing both trees and doing substring search",
     ],
     complexityNotes: "O(n * m) naive (try matching at every node); O(n + m) via serialization + string matching.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -644,7 +644,7 @@ export const nodes: KnowledgeNode[] = [
       "encode a tree to a string/array (preorder with null markers, or level-order) and decode it back",
       "must unambiguously capture structure, not just node values",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -661,7 +661,7 @@ export const nodes: KnowledgeNode[] = [
       "hash map from value to inorder index speeds up repeated subtree splits",
     ],
     complexityNotes: "O(n) with an index hash map; O(n^2) worst case without it (linear search for root each time).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -677,7 +677,7 @@ export const nodes: KnowledgeNode[] = [
       "inorder traversal yields sorted order",
     ],
     complexityNotes: "O(h) per operation where h is tree height — O(log n) balanced, O(n) worst case degenerate/unbalanced.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -693,7 +693,7 @@ export const nodes: KnowledgeNode[] = [
       "compare target to node value, go left or right, no need to check both subtrees",
     ],
     complexityNotes: "O(h) — O(log n) balanced, O(n) worst case.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -710,7 +710,7 @@ export const nodes: KnowledgeNode[] = [
       "must preserve the BST invariant after the structural change",
     ],
     complexityNotes: "O(h) per operation.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -726,7 +726,7 @@ export const nodes: KnowledgeNode[] = [
       "passing only the immediate parent's value is NOT enough — need a valid (low, high) range per node",
       "alternative: inorder traversal must be strictly increasing",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -743,7 +743,7 @@ export const nodes: KnowledgeNode[] = [
       "used inside BST deletion",
     ],
     complexityNotes: "O(h).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -760,7 +760,7 @@ export const nodes: KnowledgeNode[] = [
       "order-statistics tree / augmented BST",
     ],
     complexityNotes: "O(log n) per rank/select query with a size-augmented balanced BST; O(h) or O(n) without augmentation.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -782,7 +782,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "O(n) to build the tour of size 2n-1 (or n with first-occurrence only).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -799,7 +799,7 @@ export const nodes: KnowledgeNode[] = [
       "in-place Morris-traversal-style rewiring avoids extra space",
     ],
     complexityNotes: "O(n) time; O(1) extra space with the in-place rewiring approach.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -817,7 +817,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["tree-ancestor-queries"],
     complexityNotes: "O(n log n) preprocessing, O(log n) per ancestor/LCA query.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -836,7 +836,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["tree-ancestor-queries"],
     complexityNotes: "O(n log n) preprocessing, O(log n) per query — vs O(n) per query with naive DFS LCA.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -855,7 +855,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["tree-ancestor-queries"],
     complexityNotes: "O(log^2 n) per path query/update (O(log n) chains x O(log n) segment-tree op each).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -873,7 +873,7 @@ export const nodes: KnowledgeNode[] = [
       "specialist competitive-programming technique, essentially never asked in standard interviews",
     ],
     complexityNotes: "O(n log n) total across the decomposition when each centroid level does O(n) work.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -891,7 +891,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "O(n) or O(n * states-per-node) depending on state size.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -909,7 +909,7 @@ export const nodes: KnowledgeNode[] = [
       "two DFS passes: one bottom-up to get a fixed-root answer, one top-down to re-derive each node's answer from its parent's in O(1) using inclusion-exclusion",
     ],
     complexityNotes: "O(n) total via two passes — vs O(n^2) re-running tree DP from every possible root.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -926,7 +926,7 @@ export const nodes: KnowledgeNode[] = [
       "small-to-large merging bounds total merge work to O(n log n) despite naive-looking per-node merges",
     ],
     complexityNotes: "O(n log n) total merge cost via the small-to-large argument, vs O(n^2) naive per-subtree recomputation.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -944,7 +944,7 @@ export const nodes: KnowledgeNode[] = [
       "advanced competitive-programming technique, not an interview topic",
     ],
     complexityNotes: "O(k log k) to build a virtual tree over k marked nodes (sorting by Euler-tour order + LCA insertion), vs O(n) per query on the full tree.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 ]

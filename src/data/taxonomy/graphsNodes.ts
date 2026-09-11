@@ -38,8 +38,8 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["island-problems", "connected-groups", "path-finding"],
     complexityNotes:
       "O(V + E) time, O(V) space for the visited set plus O(V) worst-case recursion/stack depth. Recursive DFS can stack-overflow on very deep or long chain-like graphs — switch to an explicit stack for large inputs.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "bfs",
@@ -60,8 +60,8 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["minimum-unweighted-steps", "path-finding", "word-transformation"],
     complexityNotes:
       "O(V + E) time, O(V) space for the queue and visited set. Guarantees shortest path only when every edge has equal (or no) weight — weighted graphs need Dijkstra instead.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "multi-source-bfs",
@@ -81,7 +81,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["minimum-unweighted-steps", "path-finding"],
     complexityNotes:
       "Same O(V + E) bound as single-source BFS — seeding the queue with all sources at distance 0 is equivalent to adding a virtual super-source, so complexity does not change with the number of sources.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -102,7 +102,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["word-transformation", "path-finding"],
     complexityNotes:
       "Reduces branching-factor^depth to roughly 2 * branching-factor^(depth/2) by searching from both ends and stopping when frontiers intersect — a large practical win on exponential state spaces even though worst-case time is still exponential.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -122,7 +122,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["island-problems", "connected-groups"],
     complexityNotes:
       "O(rows * cols) time and space via DFS or BFS over the grid — either traversal works identically since only connectivity, not shortest distance, is required.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -142,7 +142,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["island-problems", "path-finding"],
     complexityNotes:
       "Not an algorithm itself — the mental model that a grid is a graph with implicit edges (4-directional or 8-directional) unlocks applying DFS/BFS/Dijkstra/union-find directly on grid coordinates.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -162,7 +162,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["connected-groups", "island-problems"],
     complexityNotes:
       "O(V + E) time via one DFS/BFS pass with a global visited set, or O(V + E * alpha(V)) via union-find — union-find wins when edges/unions arrive incrementally or offline.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -183,7 +183,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["connected-groups"],
     complexityNotes:
       "O(V + E) via DFS tracking parent-to-avoid-false-positive, or O(E * alpha(V)) via union-find (a cycle exists the moment an edge's two endpoints are already unioned). Directed graphs need the separate 'directed cycle detection' approach (white/gray/black coloring), not this one.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -204,7 +204,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["overlapping-concurrent-structure"],
     complexityNotes:
       "O(V + E) via BFS/DFS coloring each node the opposite color of its parent and failing on a same-color edge. A graph is bipartite exactly when it has no odd-length cycle.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -225,7 +225,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["overlapping-concurrent-structure"],
     complexityNotes:
       "Deciding k-colorability is NP-complete for k >= 3 in general graphs; backtracking with pruning is the practical approach for interview-sized inputs. 2-coloring (bipartite check) is the only case solvable in polynomial time.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -246,7 +246,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["connected-groups"],
     complexityNotes:
       "Same O(V + E) traversal as connected-components, but stores a label array/map keyed by node so O(1) group-membership lookups are possible afterward instead of re-traversing.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -271,8 +271,8 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["dependency-problems", "course-scheduling"],
     complexityNotes:
       "O(V + E) time and space via either Kahn's algorithm (BFS, indegree-based) or DFS with a finish-time stack. The ordering is not unique in general; either implementation detects a cycle as a byproduct (Kahn: not all nodes dequeued; DFS: back-edge to a gray node).",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "kahns-algorithm",
@@ -292,7 +292,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["dependency-problems", "course-scheduling"],
     complexityNotes:
       "O(V + E) time, O(V) space for the indegree array and queue. Iterative, so no recursion-depth risk on deep DAGs — often preferred over DFS-based topo sort for that reason.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -313,7 +313,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["dependency-problems"],
     complexityNotes:
       "O(V + E) time, O(V) space for recursion and the three-color visited state. Recursion depth can hit V in a long chain — an explicit stack avoids overflow on large DAGs.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -333,7 +333,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["dependency-problems"],
     complexityNotes:
       "O(E) to compute by scanning every edge once; O(1) amortized to decrement per edge consumed during Kahn's algorithm.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -353,7 +353,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["course-scheduling", "dependency-problems"],
     complexityNotes:
       "O(V + E) via three-color DFS (white/gray/black): a gray-to-gray edge is a back edge and proves a cycle. Simple 'seen before' visited-set logic is wrong here — undirected cycle detection's parent check does not generalize to directed graphs.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -373,7 +373,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["dependency-problems"],
     complexityNotes:
       "O(V + E) — this is an application framing of topological sort, not a distinct algorithm; the work is building the dependency graph correctly, then running Kahn's or DFS topo sort.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -393,7 +393,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["dependency-problems"],
     complexityNotes:
       "Any per-node/per-edge O(1) or O(deg) relaxation done in topological order costs O(V + E) total — this is the umbrella idea behind DAG shortest path and DAG DP, both of which are single relaxation passes over a topo order.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -414,7 +414,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["path-finding"],
     complexityNotes:
       "O(V + E) time, O(V) space when done as one pass over a topological order (bottom-up), or equivalently via memoized DFS (top-down) — both rely on the DAG property to guarantee each state is finalized before it's reused.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -439,8 +439,8 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["island-problems", "connected-groups"],
     complexityNotes:
       "O(alpha(V)) amortized per find/union with path compression + union by rank/size, where alpha is the inverse Ackermann function (effectively constant for any realistic input). Without both optimizations, a naive DSU degrades to O(V) per operation.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "path-compression",
@@ -460,7 +460,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Reduces amortized find cost; combined with union by rank/size gives O(alpha(V)) amortized per operation. Path compression alone (without union by rank/size) already gives O(log V) amortized.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -481,7 +481,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Bounds tree height to O(log V) on its own; combined with path compression gives O(alpha(V)) amortized per operation.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -502,7 +502,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Bounds tree height to O(log V) on its own, same guarantee as union by rank; combined with path compression gives O(alpha(V)) amortized per operation. Preferred when component size is also queried.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -522,7 +522,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["connected-groups"],
     complexityNotes:
       "Typically O((V + Q) alpha(V) + Q log Q) — the log factor from sorting queries/edges, the rest from near-constant amortized DSU operations. Requires all queries known up front; true online deletions in DSU are much harder.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -543,7 +543,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "The DSU operations inside Kruskal's add only O(E alpha(V)) on top of the O(E log E) edge sort, so DSU is never the bottleneck of Kruskal's algorithm.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -568,7 +568,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["minimum-unweighted-steps"],
     complexityNotes:
       "O(V + E) time and space — strictly cheaper than Dijkstra's O(E log V) and only correct because every edge has the same weight, so BFS layer order equals distance order.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -588,7 +588,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["weighted-shortest-path"],
     complexityNotes:
       "O(V + E) time using a deque instead of a priority queue — faster in practice than general Dijkstra's O(E log V), but only valid when weights are restricted to {0, 1}; any other weight breaks the deque invariant.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -608,8 +608,8 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["weighted-shortest-path", "path-finding"],
     complexityNotes:
       "O(E log V) with a binary heap, O(E + V log V) with a Fibonacci heap. Fails silently (produces wrong answers, not an error) on negative edge weights — a negative edge lets a supposedly-finalized node be improved after the fact, which the algorithm never revisits.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "bellman-ford",
@@ -627,7 +627,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["weighted-shortest-path"],
     complexityNotes:
       "O(V * E) time, O(V) space — much slower than Dijkstra's O(E log V), so only reach for it when negative weights or negative-cycle detection are actually required, not as a default 'always correct' choice.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -647,7 +647,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["weighted-shortest-path"],
     complexityNotes:
       "O(V^3) time, O(V^2) space. Becomes worse than running Dijkstra from every node (O(V * E log V)) once the graph is sparse — Floyd-Warshall wins specifically on dense graphs or when V is small enough that the simplicity outweighs the cubic cost.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -667,7 +667,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["weighted-shortest-path", "path-finding"],
     complexityNotes:
       "O(V + E) — strictly faster than Dijkstra's O(E log V) or Bellman-Ford's O(V * E) because the DAG property means one topological pass suffices; always prefer this over Dijkstra/Bellman-Ford when acyclicity is known.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -687,7 +687,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["path-finding", "minimum-unweighted-steps"],
     complexityNotes:
       "Same complexity as the single-source version it's built on (O(V+E) for BFS, O(E log V) for Dijkstra) — multiple sources do not add an extra factor because they only change the queue's initial contents.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -708,7 +708,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["path-finding"],
     complexityNotes:
       "Worst case same as Dijkstra's O(E log V), but a good admissible heuristic prunes the search dramatically in practice. Only correct (optimal) if the heuristic never overestimates true remaining cost; a bad heuristic silently returns a suboptimal path.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -728,7 +728,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(V * E log V) — one Bellman-Ford pass (O(V*E)) for reweighting plus V runs of Dijkstra (O(E log V) each); wins over Floyd-Warshall's O(V^3) specifically on sparse graphs with negative edges but no negative cycle.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -752,8 +752,8 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["network-capacity"],
     complexityNotes:
       "O(E log E) dominated by sorting edges (DSU operations add only O(E alpha(V))). Prefer over Prim's when the graph is sparse and already given as an edge list.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "prim",
@@ -772,7 +772,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["network-capacity"],
     complexityNotes:
       "O(E log V) with a binary heap, O(V^2) with a simple array (better on dense graphs where E approaches V^2). Prefer over Kruskal's when the graph is dense.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -792,7 +792,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["network-capacity"],
     complexityNotes:
       "Same O(E log E) as Kruskal's — no algorithmic change is needed, only recognizing that a disconnected input graph yields a forest (one MST per component) rather than a single tree.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -817,7 +817,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "The concept itself is O(V + E) to compute via Kosaraju's or Tarjan's algorithm; naive all-pairs reachability checking would be far more expensive, which is why a dedicated SCC algorithm matters.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -838,7 +838,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(V + E) time, O(V + E) space (needs the transposed graph stored explicitly, unlike Tarjan's single-pass approach).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -859,7 +859,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(V + E) time, O(V) space — asymptotically identical to Kosaraju's but avoids building a second graph, making it the more common production choice despite being trickier to implement correctly.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -880,7 +880,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(V + E) via one DFS pass tracking discovery time and low-link value per node — the same low-link technique as Tarjan's SCC, applied to undirected graphs instead.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -901,7 +901,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(V + E) via the same discovery-time/low-link DFS pass used for bridges, with a slightly different comparison (>= instead of >, plus a special root case).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -921,7 +921,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(V + E) — an extension of the articulation-points DFS that additionally maintains an edge stack, popped to form each biconnected component whenever an articulation point is found.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -941,7 +941,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Existence check is O(V + E) (degree counting + connectivity check); unlike the Hamiltonian path problem, Eulerian path existence and construction are both polynomial, not NP-hard.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -962,7 +962,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Same O(V + E) existence check as Eulerian path, with the stricter all-even-degree (undirected) or indegree==outdegree-everywhere (directed) condition.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -982,7 +982,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(E) time — each edge is visited and removed exactly once; requires the Eulerian existence condition to already hold, otherwise it will not find a valid path/circuit.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1002,7 +1002,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "NP-hard in general. Exact solutions run in O(2^V * V^2) via Held-Karp-style bitmask DP, or exponential backtracking with pruning for small V — there is no known polynomial algorithm, unlike Eulerian path.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1022,7 +1022,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(V^3) with the Floyd-Warshall-style boolean DP, reducible to O(V^3 / w) with bitset packing (w = machine word size) since each row becomes a bitwise OR of other rows.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1042,7 +1042,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(V + E): one SCC pass (Kosaraju's or Tarjan's) plus a linear rebuild of edges between condensed super-nodes; the payoff is unlocking DAG-only algorithms afterward.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1063,7 +1063,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Cycle detection within a functional graph is O(V) using Floyd's tortoise-and-hare or a visited/color array; answering many k-step queries efficiently needs binary lifting, since naive step-by-step simulation is O(k) per query.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1084,7 +1084,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(V) to detect the tail and cycle once, then O(1) per query after reducing k modulo cycle length — versus O(k) naive simulation, this is the difference between feasible and impossible for huge k.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1105,7 +1105,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(V log K) preprocessing (K = max query steps), O(log K) per query — dramatically better than O(k) naive simulation when many queries share the same functional graph.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -1128,8 +1128,8 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["network-capacity", "bipartite-assignment"],
     complexityNotes:
-      "The concept's complexity depends entirely on the chosen algorithm: Ford-Fulkerson (O(E * max_flow)), Edmonds-Karp (O(V E^2)), Dinic (O(V^2 E), O(E sqrt V) on unit-capacity graphs like bipartite matching).",
-    languageTemplatesAvailable: ["javascript", "python"],
+      "The concept's complexity depends entirely on the chosen algorithm: Ford-Fulkerson (O(E * max_flow)), Edmonds-Karp (O(V E^2)), Dinic (O(V^2 E), O(E sqrt V) on unit networks (such as the standard bipartite-matching reduction) like bipartite matching).",
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1148,8 +1148,8 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["network-capacity"],
     complexityNotes:
-      "O(E * max_flow) — can be very slow (or even fail to terminate) with irrational/poorly-chosen augmenting paths and integer capacities chosen adversarially; Edmonds-Karp fixes this by specifically using BFS.",
-    languageTemplatesAvailable: ["javascript", "python"],
+      "O(E * max_flow) with nonnegative integer capacities; adversarial paths can be slow, but integral augmentation terminates. With irrational capacities arbitrary path choices may fail to terminate. Edmonds-Karp uses BFS for a capacity-independent polynomial bound.",
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1170,7 +1170,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["network-capacity"],
     complexityNotes:
       "O(V E^2) — polynomial and capacity-independent (unlike raw Ford-Fulkerson), because BFS-shortest augmenting paths bound the number of iterations to O(VE).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1185,13 +1185,13 @@ export const nodes: KnowledgeNode[] = [
     recognitionClues: [
       "need max flow fast on a large graph where Edmonds-Karp's O(V E^2) is too slow",
       "build a level graph via BFS, then push blocking flow via DFS, repeat",
-      "O(E sqrt V) special case on unit-capacity graphs makes it the standard choice for bipartite matching at scale",
+      "O(E sqrt V) special case on unit networks (such as the standard bipartite-matching reduction) makes it the standard choice for bipartite matching at scale",
       "competitive-programming default for max-flow problems with large constraints",
     ],
     commonProblemShapes: ["network-capacity"],
     complexityNotes:
-      "O(V^2 E) in general, dropping to O(E sqrt V) on unit-capacity graphs (which includes bipartite matching) — a substantial win over Edmonds-Karp's O(V E^2) at scale.",
-    languageTemplatesAvailable: ["javascript", "python"],
+      "O(V^2 E) in general, dropping to O(E sqrt V) on unit networks (such as the standard bipartite-matching reduction) (which includes bipartite matching) — a substantial win over Edmonds-Karp's O(V E^2) at scale.",
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1212,7 +1212,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["network-capacity"],
     complexityNotes:
       "No extra asymptotic cost beyond computing max flow itself (whatever algorithm is used) — min cut is read off the final residual graph via one more BFS/DFS from the source.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1232,8 +1232,8 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["bipartite-assignment"],
     complexityNotes:
-      "O(E sqrt V) via Hopcroft-Karp (best known for this specific case), O(VE) via Kuhn's/Hungarian-style augmenting-path algorithm, or reducible to a unit-capacity max-flow instance solved with Dinic's.",
-    languageTemplatesAvailable: ["javascript", "python"],
+      "O(E sqrt V) via Hopcroft-Karp (a standard bound for this case), O(VE) via Kuhn's/Hungarian-style augmenting-path algorithm, or reducible to a unit-capacity max-flow instance solved with Dinic's.",
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1255,7 +1255,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["bipartite-assignment"],
     complexityNotes:
       "O(V * E) — one DFS-for-augmenting-path attempt per left node. Simpler to implement than Hopcroft-Karp and fast enough unless V is in the thousands.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1269,13 +1269,13 @@ export const nodes: KnowledgeNode[] = [
     recognitionClues: [
       "maximum bipartite matching needed on a LARGE bipartite graph where Kuhn's O(VE) is too slow",
       "BFS to find shortest augmenting-path length, then DFS to find a maximal set of disjoint augmenting paths of that length, repeat",
-      "best known general algorithm for unweighted bipartite matching (O(E sqrt V))",
+      "standard efficient algorithm for unweighted bipartite matching (O(E sqrt V))",
       "matches Dinic's complexity on unit-capacity bipartite graphs, since Dinic's specializes to this",
     ],
     commonProblemShapes: ["bipartite-assignment"],
     complexityNotes:
       "O(E sqrt V) — asymptotically better than Kuhn's O(VE), the improvement coming from processing many augmenting paths of the same shortest length per phase instead of one at a time.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1295,7 +1295,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["bipartite-assignment"],
     complexityNotes:
       "The concept itself has no fixed complexity — it's solved by the Hungarian algorithm in O(V^3), or via min-cost max-flow when a flow formulation is more natural for the problem's constraints.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1316,7 +1316,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["bipartite-assignment"],
     complexityNotes:
       "O(V^3) with the standard matrix-based implementation (O(V^2 log V + VE) variants exist) — solves the assignment problem exactly, unlike greedy heuristics which can miss the optimum.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1337,7 +1337,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["network-capacity", "bipartite-assignment"],
     complexityNotes:
       "O(max_flow * E log V) or O(V * E^2) depending on the shortest-path subroutine used per augmentation — one of the more expensive standard graph algorithms, reserved for problems that explicitly need both capacity and cost optimized together.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 ]

@@ -56,6 +56,41 @@ Legend: ○ skeleton · ◐ in-progress · ● complete
 - **${allComplexityHeuristics.length}** complexity heuristics
 
 ${categorySections}
+## Problem-shape recognition database
+
+Each row is a separate problem shape, with candidate approaches narrowed by constraints.
+
+| Shape | Candidates | Constraint reasoning |
+|---|---|---|
+${allProblemShapes.map(shape => `| ${shape.name} (\`${shape.id}\`) | ${shape.candidatePatternIds.join(", ")} | ${shape.disambiguation.replaceAll("|", "\\|")} |`).join("\n")}
+
+## Curriculum QA
+
+The taxonomy is expandable; these counts are a snapshot, not an official number of patterns.
+Aliases and parent links keep synonyms and variants connected. Every candidate approach,
+parent, prerequisite and problem-shape reference is validated by taxonomy.test.ts.
+Skeleton entries advertise no templates. Actual template availability must be checked
+against the deep-content registry as authored lessons become available.
+
+Educational corrections include separate substring/subsequence palindrome reasoning,
+non-universal sliding-window recognition, and correct flow algorithm assumptions.
+Dinic's O(E sqrt V) bound applies to unit networks such as bipartite matching reductions,
+not arbitrary unit-capacity graphs. See [the algorithm reference](https://cp-algorithms.com/graph/dinic.html).
+
+## Range-query selection
+
+| Technique | Updates | Queries | Static/dynamic | Complexity |
+|---|---|---|---|---|
+| Prefix sum | Rebuild after arbitrary changes | Range sum | Static | O(n) build, O(1) query |
+| Difference array | Batch range addition | Materialize final values | Offline | O(1) update, O(n) reconstruction |
+| Fenwick tree | Point addition; range variants with differences | Prefix/range sum | Dynamic | O(log n) update/query, O(n) storage |
+| Segment tree | Point assignment/update | Associative range aggregate | Dynamic | O(n) build, O(log n) update/query |
+| Lazy segment tree | Compatible range updates | Range aggregate | Dynamic | O(log n) update/query with composable lazy tags |
+| Sparse table | Rebuild | Static idempotent min/max/gcd | Static | O(n log n) build/space, O(1) idempotent query |
+| Square-root decomposition | Point updates, block-aware variants | Range aggregate | Dynamic | Typically O(sqrt n) query; update depends on aggregate |
+| Mo's algorithm | Offline variants support modifications | Reorder range queries with cheap add/remove | Offline | Typical O((n+q)sqrt n) add/remove operations |
+| Ordered set | Insert/delete | Order, predecessor/successor | Dynamic | Balanced-tree O(log n); rank requires augmentation |
+| Coordinate compression | Usually preprocess known keys | Rank mapping | Usually offline | O(n log n) preprocessing; does not itself answer aggregates |
 `
 }
 

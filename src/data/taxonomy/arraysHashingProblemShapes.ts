@@ -36,8 +36,8 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["hash-set", "sort-and-scan", "cyclic-sort", "fast-slow-pointers"],
     disambiguation:
       "If extra space is unrestricted, a hash set gives O(n) time in one pass. If space must be O(1) and values are guaranteed to lie in [1, n], cyclic sort or index-placement finds the duplicate in place. If values aren't range-bounded but O(1) space is still required, sort first (O(n log n)) and scan for adjacent equals. Fast/slow pointers apply when the array can be treated as an implicit linked list (single duplicate, values in [1, n], array must stay unmodified).",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "missing-number",
@@ -61,7 +61,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["cyclic-sort", "hash-set", "running-sum"],
     disambiguation:
       "When values are guaranteed to be exactly the range [0, n] or [1, n] with one missing, cyclic sort (or the sum/XOR formula — an O(1)-space arithmetic shortcut built on running-sum) solves it in O(n) time, O(1) space. A hash set is the general-purpose O(n)-space fallback when the range guarantee doesn't hold or multiple ranges are being compared.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -85,7 +85,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["cyclic-sort", "index-placement", "fast-slow-pointers", "hash-set"],
     disambiguation:
       "If array modification is allowed and values sit in [1, n], cyclic sort or index-placement finds the repeat in O(n) time, O(1) space. If the array must stay read-only, Floyd's fast/slow pointers (treating value-at-index as a 'next' pointer) achieves O(1) space without mutation. A hash set is the simplest fallback when neither constraint holds, at the cost of O(n) space.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -109,8 +109,8 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["sort-and-scan", "frequency-counting", "counting-array"],
     disambiguation:
       "Sorting both strings and comparing is O(n log n) per string and simple to write. A frequency array (when the alphabet is small and fixed, e.g. 26 lowercase letters) or a hash map counts each string in O(n) and is preferred at scale or with a large/unicode alphabet.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "group-anagrams",
@@ -132,8 +132,8 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["hash-map", "sort-and-scan", "frequency-counting"],
     disambiguation:
       "Use each string's sorted form (O(n log n) per string) or its character-count signature (O(n) per string, better for long strings or large alphabets) as a hash map key, then bucket strings sharing a key. This is the anagram check applied repeatedly and keyed, rather than compared pairwise.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "palindrome",
@@ -152,11 +152,11 @@ export const problemShapes: ProblemShape[] = [
       "valid palindrome",
       "longest palindromic substring",
     ],
-    candidatePatternIds: ["opposite-direction-two-pointers", "dynamic-programming"],
+    candidatePatternIds: ["opposite-direction-two-pointers", "expand-around-center", "palindrome-dp", "manachers-algorithm"],
     disambiguation:
-      "Checking whether a given string/array is itself a palindrome is opposite-direction two pointers: O(n) time, O(1) space. Finding the longest palindromic substring or subsequence within a larger string needs expand-around-center (O(n^2)) or dynamic programming (O(n^2) time/space), since the palindrome's boundaries aren't known up front.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+      "Check an entire string with opposite two pointers in O(n) time and O(1) extra space. For a longest palindromic substring, expand around each center in O(n²), use interval DP, or use Manacher in O(n). A palindromic subsequence permits gaps: center expansion and Manacher do not solve it; use interval DP in O(n²) time. Constraints and required output determine which task you have.",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "pair-sum",
@@ -178,7 +178,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["hash-map", "opposite-direction-two-pointers"],
     disambiguation:
       "Unsorted input where you must return indices: a hash map gives O(n) time, O(n) space via complement lookup. Sorted input (or sorting is free/already done) where only the values matter: opposite-direction two pointers gives O(n) time, O(1) extra space after the sort.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -202,8 +202,8 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["sort-and-scan", "opposite-direction-two-pointers", "hash-map"],
     disambiguation:
       "Sort the array, then for each fixed first element run opposite-direction two pointers on the remainder: O(n^2) time, O(1) extra space beyond the sort, and sorting also makes duplicate-triplet skipping straightforward. A hash-map-based approach avoids sorting but complicates duplicate handling and is rarely preferred here.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "k-sum",
@@ -226,7 +226,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["sort-and-scan", "opposite-direction-two-pointers", "hash-map"],
     disambiguation:
       "Generalizes triplet-sum by recursively fixing one element at a time (sort once, O(n log n)) until only a pair-sum with two pointers remains as the base case: O(n^(k-1)) time overall. Practical only for small fixed k (3-4); for large or variable k this shape stops being tractable by brute enumeration and signals a different technique (e.g. meet-in-the-middle or subset-sum DP) instead.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   // "top-k" is defined once, canonically, in intervalsHeapsTreesProblemShapes.ts —
@@ -250,7 +250,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["heap", "quickselect", "sort-and-scan"],
     disambiguation:
       "A min-heap of size k gives O(n log k) and adapts well to a data stream. Quickselect gives expected O(n) (worst case O(n^2)) when the array is fully available in memory and only a one-shot answer is needed. Sorting is the simplest O(n log n) fallback.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -272,7 +272,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["heap", "quickselect", "sort-and-scan"],
     disambiguation:
       "Same tradeoffs as kth-largest with the comparator flipped: a max-heap of size k for O(n log k) or streaming input, quickselect for expected O(n) one-shot queries, sorting for the simplest O(n log n) fallback.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -295,7 +295,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["linear-scan", "frequency-counting", "sort-and-scan"],
     disambiguation:
       "Boyer-Moore voting (a specialized linear scan carrying a candidate value + counter) solves the guaranteed-majority (>n/2) case in O(n) time, O(1) space. A hash map/frequency count is the general-purpose O(n) time, O(n) space fallback when there's no guaranteed strict majority (e.g. finding all elements appearing more than n/3 times). Sorting and reading the middle element works in O(n log n) when a strict majority is guaranteed.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -319,7 +319,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["frequency-counting", "heap", "counting-array"],
     disambiguation:
       "Build counts with a hash map or counting array (bounded domain) in O(n), then rank or filter: a heap for top-k-by-frequency (O(n log k)), or bucket sort by frequency for O(n) when frequencies are themselves bounded by n (bucket index = frequency).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -342,8 +342,8 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["sliding-window", "prefix-sum", "kadanes-algorithm"],
     disambiguation:
       "Sliding window works when all values are positive, since sums grow monotonically as the window extends. Once negative numbers are allowed, that monotonicity breaks and prefix-sum + hash map is usually necessary for 'sums to k' questions. For the specific ask 'maximum sum contiguous subarray,' Kadane's algorithm is the direct O(n) specialist tool regardless of sign.",
-    languageTemplatesAvailable: ["javascript", "python"],
-    contentStatus: "skeleton",
+    languageTemplatesAvailable: [],
+    contentStatus: "complete",
   },
   {
     id: "subsequence",
@@ -365,7 +365,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["dynamic-programming", "binary-search", "same-direction-two-pointers"],
     disambiguation:
       "Because elements may be skipped, a sliding window (which requires contiguity) does not apply. Most subsequence optimization problems (longest/shortest satisfying some property) are dynamic programming, O(n^2); some, like longest increasing subsequence, admit an O(n log n) patience-sorting/binary-search refinement. A simple 'is X a subsequence of Y' check is a same-direction two-pointer scan in O(n).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -386,10 +386,10 @@ export const problemShapes: ProblemShape[] = [
       "minimum window substring",
       "substring containing all characters of another string",
     ],
-    candidatePatternIds: ["variable-sliding-window", "hash-map"],
+    candidatePatternIds: ["variable-sliding-window", "hash-map", "kmp", "rolling-hash", "palindrome-dp"],
     disambiguation:
-      "Substring problems are the string specialization of the subarray shape: contiguity means variable sliding window (grow/shrink two pointers) is almost always the answer, typically paired with a hash map or frequency array tracking the window's character counts to test validity in O(1) per move.",
-    languageTemplatesAvailable: ["javascript", "python"],
+      "Substring means contiguous characters, not a particular algorithm. A character-count condition whose validity supports safe grow/shrink decisions suggests sliding window. Exact pattern matching suggests KMP, Z or rolling hash; palindrome objectives suggest center expansion, Manacher or DP. Check the objective and monotonicity before selecting a window.",
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -413,7 +413,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["variable-sliding-window", "prefix-sum", "dynamic-programming"],
     disambiguation:
       "If validity is monotonic as the window grows or shrinks (adding an element can only help or only hurt, never both — e.g. all-positive sums, or a distinct-character-count bound), variable sliding window finds the optimum in O(n). If validity depends on an equality condition over sums that may include negative numbers (e.g. 'longest subarray summing to k'), prefix sum + hash map (tracking the first-seen index per prefix value) is needed instead. Non-monotonic conditions typically fall back to dynamic programming.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -436,7 +436,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["fixed-sliding-window", "kadanes-algorithm", "monotonic-stack"],
     disambiguation:
       "Fixed window size k with a sum/average target: fixed sliding window, O(n). Window spans the entire array with the target being the maximum-sum contiguous subarray specifically: Kadane's algorithm, O(n). Sliding-window maximum/minimum (the running max/min as a fixed window slides across the array) needs a monotonic deque/stack to stay O(n) rather than O(n*k) from rescanning each window.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -460,7 +460,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["prefix-sum", "difference-array"],
     disambiguation:
       "Many read-only range-sum queries on a static array: precompute a prefix-sum array once for O(1) per query. Many range-update operations (add a value across [l, r]) followed by a final read: a difference array answers each update in O(1) and reconstructs final values with one prefix-sum pass at the end — the inverse use case of plain prefix sum.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -483,7 +483,7 @@ export const problemShapes: ProblemShape[] = [
     candidatePatternIds: ["hash-set", "sort-and-scan"],
     disambiguation:
       "A hash set lets you check, for each number, whether it's the start of a sequence (no predecessor present in the set) and then count forward — amortized O(n) total since each number is visited a bounded number of times. Sorting and scanning for consecutive runs is a simpler O(n log n) alternative when the strict O(n) requirement doesn't matter.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 ]

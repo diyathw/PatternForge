@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/stage-static-assets.mjs",
     "dev": "vite",
+    "prebuild": "node scripts/stage-static-assets.mjs",
     "build": "tsc -b && vite build",
     "typecheck": "tsc -b --noEmit",
     "lint": "oxlint",
@@ -15,6 +17,7 @@
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
     "@tailwindcss/vite": "^4.3.3",
+    "monaco-editor": "^0.56.0",
     "pyodide": "^314.0.6",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",

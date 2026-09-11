@@ -16,7 +16,7 @@ export const heuristics: ComplexityHeuristic[] = [
       "exponential exact search (e.g. try every assignment)",
     ],
     caveat:
-      "This is a heuristic, not a law: it assumes a roughly 10^8-10^9 operations-per-second budget and a low per-operation constant factor. A specific problem's actual constant factor, time limit, or a required exponent higher than n! (e.g. n^n) can still make even n <= 10 too slow, and a tightly-constant-factor'd O(n!) solution can occasionally pass for slightly larger n too. Always sanity-check against the stated time limit rather than applying this band mechanically.",
+      "This is a heuristic, not a law: there is no portable operations-per-second budget across JavaScript, Python, hardware and judge limits. A specific problem's actual constant factor, time limit, or a required exponent higher than n! (e.g. n^n) can still make even n <= 10 too slow, and a tightly-constant-factor'd O(n!) solution can occasionally pass for slightly larger n too. Always sanity-check against the stated time limit rather than applying this band mechanically.",
   },
   {
     id: "n-leq-20",

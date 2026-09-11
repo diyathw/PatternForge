@@ -41,7 +41,7 @@ export const nodes: KnowledgeNode[] = [
       "needs an explicit base case to stop",
       "recursion tree / call stack visualization helps trace it",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -68,7 +68,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     complexityNotes:
       "Worst case is exponential/factorial in the branching factor; effectiveness depends entirely on how aggressively invalid branches are pruned.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -84,7 +84,7 @@ export const nodes: KnowledgeNode[] = [
       "state (path array, used[] set, board) is mutated in place and restored on the way back up",
       "the literal template body every backtracking solution shares",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -103,7 +103,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["permutations-shape"],
     complexityNotes: "O(n! * n) to generate and copy every permutation.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -121,7 +121,7 @@ export const nodes: KnowledgeNode[] = [
       "C(n, k) total results",
     ],
     commonProblemShapes: ["combinations-shape"],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -140,7 +140,7 @@ export const nodes: KnowledgeNode[] = [
       "'find all unique combinations that sum to target'",
     ],
     commonProblemShapes: ["combinations-shape", "partition-problems"],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -157,7 +157,7 @@ export const nodes: KnowledgeNode[] = [
       "track occupied columns and both diagonals with sets for O(1) conflict checks",
     ],
     commonProblemShapes: ["constraint-satisfaction"],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -174,7 +174,7 @@ export const nodes: KnowledgeNode[] = [
       "constraint propagation (eliminating impossible candidates before recursing) is what keeps it fast",
     ],
     commonProblemShapes: ["constraint-satisfaction"],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -192,7 +192,7 @@ export const nodes: KnowledgeNode[] = [
       "'does this word exist in the board'",
     ],
     commonProblemShapes: ["state-space-search"],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -208,7 +208,7 @@ export const nodes: KnowledgeNode[] = [
       "checking validity as you go (rather than generating everything then filtering) is what makes it tractable",
       "formal name: Constraint Satisfaction Problem (CSP)",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -224,7 +224,7 @@ export const nodes: KnowledgeNode[] = [
       "sort input first so a bounding check can break out of a loop early",
       "memoize repeated states to avoid re-exploring an identical subtree",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -240,7 +240,7 @@ export const nodes: KnowledgeNode[] = [
       "prune any subtree whose best-possible bound can't beat the current best",
       "explores the most promising branch first, often via a priority queue",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -261,7 +261,7 @@ export const nodes: KnowledgeNode[] = [
       "merge sort, quick sort, and binary search are the canonical examples (defined in their own tracks — see 'merge-sort', 'quick-sort', 'binary-search')",
       "the combine step does real work, unlike plain recursion which often doesn't need one",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -277,7 +277,7 @@ export const nodes: KnowledgeNode[] = [
       "the general idea underlying merge sort's midpoint split and quick sort's pivot split",
       "combine step is what distinguishes one divide-and-conquer algorithm from another even when the split is identical",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -295,7 +295,7 @@ export const nodes: KnowledgeNode[] = [
       "geometric problem — cross-reference the computational-geometry track for the strip-scan mechanics",
     ],
     complexityNotes: "O(n log n), beating the O(n^2) brute-force all-pairs check.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -312,7 +312,7 @@ export const nodes: KnowledgeNode[] = [
       "cuts an O(n^2)-per-layer DP to O(n log n) per layer when opt(i,j) is provably monotonic (quadrangle inequality)",
       "only applies layer by layer (dimension i), unlike Knuth's optimization which applies within a single interval-DP table",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -333,7 +333,7 @@ export const nodes: KnowledgeNode[] = [
       "sorting the input first is often what exposes the correct greedy order",
     ],
     commonProblemShapes: ["scheduling-problems"],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -351,7 +351,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["scheduling-problems"],
     complexityNotes: "O(n log n) for the sort; correctness proven via an exchange argument.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -367,7 +367,7 @@ export const nodes: KnowledgeNode[] = [
       "the specific greedy rule that makes interval scheduling optimal — not 'shortest interval first' or 'earliest start first', which are both wrong",
       "picking the earliest finish leaves maximum room for future picks",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -383,7 +383,7 @@ export const nodes: KnowledgeNode[] = [
       "requires proving the local choice never forecloses a better global outcome",
       "the general principle instantiated differently by each specific greedy pattern (earliest finish time, smallest ratio, etc.)",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -399,7 +399,7 @@ export const nodes: KnowledgeNode[] = [
       "the sort order itself IS the greedy strategy (e.g. by end time, by ratio, by deadline)",
       "shows up across interval, scheduling, and array-pairing problems as the default first idea to try",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -415,7 +415,7 @@ export const nodes: KnowledgeNode[] = [
       "the standard proof technique for greedy correctness — used to justify, not to implement",
       "'assume for contradiction a better solution exists that differs from the greedy one'",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -431,7 +431,7 @@ export const nodes: KnowledgeNode[] = [
       "track the farthest index reachable so far in a single left-to-right scan",
       "if the current index ever exceeds the farthest reachable index, fail immediately",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -447,7 +447,7 @@ export const nodes: KnowledgeNode[] = [
       "a solution exists iff total gas >= total cost",
       "reset the candidate start to i+1 whenever the running tank total goes negative",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -464,7 +464,7 @@ export const nodes: KnowledgeNode[] = [
       "repeatedly pop the two lowest-frequency nodes from a min-heap and merge them into a new internal node",
       "more frequent symbols end up with shorter codes",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -480,7 +480,7 @@ export const nodes: KnowledgeNode[] = [
       "sort by value-to-weight ratio descending, take greedily until the capacity is full",
       "contrast with 0/1 Knapsack: greedy is optimal here specifically because fractions are allowed — it fails once items become all-or-nothing",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -497,7 +497,7 @@ export const nodes: KnowledgeNode[] = [
       "Prim builds an MST by growing one tree, always adding the cheapest edge leaving it (see 'prim')",
       "Dijkstra expands the closest unvisited vertex first (see 'dijkstra') — greedy only because all weights are non-negative",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -514,7 +514,7 @@ export const nodes: KnowledgeNode[] = [
       "a union-find over slots (or a boolean slot array) tracks which time slots are still free",
     ],
     commonProblemShapes: ["scheduling-problems"],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -532,7 +532,7 @@ export const nodes: KnowledgeNode[] = [
       "treat as the canonical textbook framing; 'interval-scheduling' is the canonical taxonomy node — this is a named variant",
     ],
     commonProblemShapes: ["scheduling-problems"],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -552,7 +552,7 @@ export const nodes: KnowledgeNode[] = [
       "top-down: still a recursive function, just with a hash map/array of seen results guarding it",
       "recursion that recomputes the same (index, state) pair many times — the recursion tree has repeated subtrees",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -568,7 +568,7 @@ export const nodes: KnowledgeNode[] = [
       "no call stack — just nested loops over states, starting from the base cases",
       "usually the version asked for once memoization has been understood, to avoid recursion-depth limits",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -584,7 +584,7 @@ export const nodes: KnowledgeNode[] = [
       "two calls with the same state must always produce the same answer, or the state is under-specified",
       "picking the state is usually the hard part of solving a new DP problem — 'what do I need to know to decide the next move?'",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -600,7 +600,7 @@ export const nodes: KnowledgeNode[] = [
       "dp[i] = f(dp[i-1], dp[i-2], ...) — the concrete 'why does optimal substructure hold here' step",
       "usually discovered by asking 'what's the last decision made to reach this state?'",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -616,7 +616,7 @@ export const nodes: KnowledgeNode[] = [
       "dp[0] or dp[i][0] / dp[0][j] initialized before the main loop runs",
       "an off-by-one or wrong value here silently corrupts every dependent state",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -632,7 +632,7 @@ export const nodes: KnowledgeNode[] = [
       "forward vs backward capacity loop is exactly what distinguishes 0/1 knapsack from unbounded knapsack when compressed to 1D",
       "interval DP fills by increasing interval length (gap), never row-by-row",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -648,7 +648,7 @@ export const nodes: KnowledgeNode[] = [
       "turns O(n*m) space into O(m) (or O(1) for some 1D DPs)",
       "watch for overwrite-before-read bugs — this is exactly why iteration direction matters after compressing",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -668,7 +668,7 @@ export const nodes: KnowledgeNode[] = [
       "dp array indexed by a single position along an array/string",
       "'climbing stairs', 'house robber', 'maximum subarray'-style single-sequence recurrences",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -684,7 +684,7 @@ export const nodes: KnowledgeNode[] = [
       "dp table is a grid, filled row-by-row (or in another order the recurrence dictates)",
       "two sequences being compared/aligned, or one sequence plus a resource constraint",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -701,7 +701,7 @@ export const nodes: KnowledgeNode[] = [
       "obstacles zero out a cell's path count / mark it unreachable",
       "'unique paths', 'minimum path sum', 'dungeon game'",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -720,7 +720,7 @@ export const nodes: KnowledgeNode[] = [
       "'0/1' = include-or-exclude only, no fractions (contrast: fractional-knapsack), no repeats (contrast: unbounded-knapsack)",
     ],
     commonProblemShapes: ["subsets-shape"],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -736,7 +736,7 @@ export const nodes: KnowledgeNode[] = [
       "when compressed to 1D, the capacity loop goes FORWARD, unlike 0/1 knapsack — that's the whole difference in code",
       "'unlimited supply', 'as many of each as you like', 'reuse allowed'",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -752,7 +752,7 @@ export const nodes: KnowledgeNode[] = [
       "'at most k copies of each item'",
       "binary-split each item into log2(k) 'bundle' items to reduce it to plain 0/1 knapsack faster than a naive O(n*W*k)",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -770,7 +770,7 @@ export const nodes: KnowledgeNode[] = [
       "'can we select elements that sum to exactly this value', 'can the array be partitioned to hit this sum'",
     ],
     commonProblemShapes: ["partition-problems", "subsets-shape"],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -788,7 +788,7 @@ export const nodes: KnowledgeNode[] = [
       "the two-group equal-sum case reduces directly to subset-sum with target = totalSum / 2",
     ],
     commonProblemShapes: ["partition-problems"],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -805,7 +805,7 @@ export const nodes: KnowledgeNode[] = [
       "dp[amount] built from dp[amount - coin] for each coin denomination",
       "'minimum coins' uses min(); 'number of ways' uses += and needs the coin loop OUTSIDE the amount loop to avoid counting permutations as distinct combinations",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -823,7 +823,7 @@ export const nodes: KnowledgeNode[] = [
       "O(n log n): maintain a 'tails' array and binary-search each new element's insertion point (patience sorting) — not literally the LIS itself",
       "'longest subsequence such that each element is greater than the previous'",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -840,7 +840,7 @@ export const nodes: KnowledgeNode[] = [
       "dp[i][j] = dp[i-1][j-1]+1 if chars match, else max(dp[i-1][j], dp[i][j-1])",
       "two sequences being compared where characters may be freely skipped in either one",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -857,7 +857,7 @@ export const nodes: KnowledgeNode[] = [
       "dp[i][j] = dp[i-1][j-1] if chars match, else 1 + min(insert, delete, replace) among the three neighbors",
       "'minimum operations to convert word1 into word2'",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -874,7 +874,7 @@ export const nodes: KnowledgeNode[] = [
       "must fill by increasing substring length, not row-by-row, since dp[i][j] depends on the shorter dp[i+1][j-1]",
       "'longest palindromic substring', 'longest palindromic subsequence', 'palindrome partitioning'",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -890,7 +890,7 @@ export const nodes: KnowledgeNode[] = [
       "dp[i] = true if dp[j] is true AND s[j..i] is in the dictionary, for some j < i",
       "1D dp over string prefixes with a dictionary/hash-set lookup at each candidate split point",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -906,7 +906,7 @@ export const nodes: KnowledgeNode[] = [
       "dp[i][j] depends on dp[i-1][j-1], dp[i-1][j], and/or dp[i][j-1] depending on which wildcard is at pattern[j]",
       "the 'match zero or more' case is what forces looking at TWO previous states instead of one, unlike plain edit distance",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -923,7 +923,7 @@ export const nodes: KnowledgeNode[] = [
       "'matrix chain multiplication', 'burst balloons', 'minimum cost to merge stones', 'palindrome partitioning'",
       "conceptually related to tree-dp (DP over subtrees) and dag-dynamic-programming (DP over topological order) — same 'combine subproblem answers' idea, different underlying shape (contiguous range vs tree vs DAG)",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -939,7 +939,7 @@ export const nodes: KnowledgeNode[] = [
       "transition is choosing to switch modes or stay, drawn naturally as a small finite-state automaton per index",
       "the problem describes explicit phases/modes with rules about which mode can follow which",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -956,7 +956,7 @@ export const nodes: KnowledgeNode[] = [
       "state = (day, holding shares or not, transactions used so far)",
       "'maximum profit from buying and selling stock' with any of the above constraints",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -975,7 +975,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: ["subsets-shape", "matching-problems", "state-space-search"],
     complexityNotes: "Typically O(2^n * n) or O(2^n * n^2) time.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -991,7 +991,7 @@ export const nodes: KnowledgeNode[] = [
       "dp over digit position with a 'tight' flag (still bounded by N's prefix so far) and often a 'started/leading-zero' flag",
       "'count numbers <= N with digit sum equal to X', 'no two adjacent equal digits', 'count numbers without digit 4'",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1006,7 +1006,7 @@ export const nodes: KnowledgeNode[] = [
       "dp[state] stores a probability, transitions are weighted by probabilities that must sum to 1 out of each state",
       "'probability that...', random walks, dice-roll or coin-flip sequences",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1022,7 +1022,7 @@ export const nodes: KnowledgeNode[] = [
       "dp[state] = best outcome assuming the OPPONENT also plays optimally — a minimax baked into the DP transition",
       "'can the first player win', 'optimal strategy for both players', 'maximum score difference'",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1038,7 +1038,7 @@ export const nodes: KnowledgeNode[] = [
       "often defined by a self-referential equation (dp[state] depends on dp[state] itself) solved algebraically before coding",
       "'expected number of moves/rolls/draws until...'",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1054,7 +1054,7 @@ export const nodes: KnowledgeNode[] = [
       "a monotonic deque maintains window-candidate states for O(1) amortized min/max instead of an O(k) rescan each step",
       "speeds an O(n*k) DP down to O(n); look for 'at most k steps back' phrasing plus a min/max transition",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1070,7 +1070,7 @@ export const nodes: KnowledgeNode[] = [
       "applies when the transition has extra exploitable structure — monotonicity, convexity, or range-sum decomposability",
       "recognize by: a correct DP that TLEs only because of its size (n large enough that the base complexity isn't enough)",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1086,7 +1086,7 @@ export const nodes: KnowledgeNode[] = [
       "precompute a running prefix sum of the dp array so each range query resolves in O(1)",
       "turns an O(n) inner loop per state into O(1), an O(n^2) DP into O(n)",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1103,7 +1103,7 @@ export const nodes: KnowledgeNode[] = [
       "maintain a lower/upper envelope of lines, query by binary search (or a monotonic pointer when queries are also monotonic)",
       "applies specifically when both the line slopes and the query points arrive in monotonic order — otherwise a Li Chao tree is needed instead",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1121,7 +1121,7 @@ export const nodes: KnowledgeNode[] = [
       "requires the cost function to satisfy the quadrangle inequality — cuts interval DP from O(n^3) to O(n^2)",
       "classic for optimal binary search tree construction and some matrix-chain-multiplication variants",
     ],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 ]

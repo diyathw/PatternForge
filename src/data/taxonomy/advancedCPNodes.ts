@@ -43,7 +43,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["dynamic-range-sum", "range-query"],
     complexityNotes:
       "Supports point update and prefix-sum query, both O(log n); range sum via two prefix queries. Extendable to range-update/point-query with a difference-array trick, and to range-update/range-query with two Fenwick trees. Dynamic structure (unlike sparse table). Build is O(n log n) naively or O(n) with the linear-time construction trick. Lower constant factor and simpler to code than a segment tree, but less flexible (no arbitrary range min/max/gcd without extra tricks; segment tree is the more general tool).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -63,7 +63,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["dynamic-range-sum", "range-query"],
     complexityNotes:
       "Dynamic structure: supports point updates and arbitrary associative range queries (sum, min, max, gcd, xor, ...) in O(log n) each; build is O(n). More general than a Fenwick tree because the combine operation is not restricted to invertible ones (works for min/max where Fenwick struggles). Range updates without laziness degrade to O(n) per update — see Lazy Segment Tree for O(log n) range updates.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -84,7 +84,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["range-update", "dynamic-range-sum"],
     complexityNotes:
       "Dynamic structure: supports O(log n) range update AND O(log n) range query by deferring ('lazily' propagating) pending updates to children only when a query or update descends into them. Contrast with a plain segment tree (point update, range query) and a difference array (offline range update, single-pass final query only, no interleaving of updates and queries).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -104,7 +104,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["static-min-max-query", "range-query"],
     complexityNotes:
       "STATIC structure only — no updates supported after O(n log n) build. Query is O(1) for idempotent operations (min, max, gcd, and, or) using the overlapping-doubling trick, or O(log n) for non-idempotent ones (sum) if implemented naively over 2^k blocks. Best choice when the array is fixed and queries vastly outnumber any need to modify it; if updates are required, use a Fenwick or segment tree instead.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -123,7 +123,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["dynamic-range-sum", "range-query"],
     complexityNotes:
       "Dynamic structure: partitions the array into ~sqrt(n) blocks, each with a precomputed aggregate; update is O(1) to O(sqrt n) depending on variant, and range query is O(sqrt n) (full blocks answered from precomputed aggregate, partial blocks scanned directly). Weaker asymptotics than a segment tree (O(sqrt n) vs O(log n)) but simpler to reason about and easier to adapt to unusual per-block operations (e.g. maintaining a frequency map per block for Mo's-adjacent problems).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -143,7 +143,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["range-query"],
     complexityNotes:
       "Applies to OFFLINE queries only (all queries must be known upfront) on a STATIC array (no updates support in the classic form; 'Mo's with updates' extends it at extra cost). Sorts queries by block of left endpoint (block size ~sqrt(n)) then by right endpoint (alternating direction per block for a further constant-factor win), and slides a two-pointer window between queries, giving roughly O((n + q) * sqrt(n)) total for O(1)-amortized add/remove per element. Not usable when queries are interleaved with updates or must be answered online.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -162,7 +162,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["dynamic-range-sum"],
     complexityNotes:
       "Dynamic structure: supports insert, delete, find k-th order statistic, and rank-of-value, typically in O(log n) each. Usually implemented as a balanced BST augmented with subtree-size counters (e.g. a Fenwick tree over compressed values, a Treap, or a language built-in like C++'s policy-tree ordered_set). JS/Python lack a built-in; typically emulated with a Fenwick tree over coordinate-compressed values for count/rank queries, or a Treap for full order-statistics + arbitrary insert/delete.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -185,7 +185,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Runs BFS simultaneously from the start and the goal, stopping when the frontiers meet. Reduces branching-factor-b, depth-d search from O(b^d) to roughly O(b^(d/2)) each direction, a large win for large b or d. Requires the goal state to be known in advance and the graph to be usable in reverse (or undirected).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -205,7 +205,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Priority-queue-driven search that always expands the lowest cumulative-cost node next; equivalent to Dijkstra's algorithm without a target-directed heuristic. Requires non-negative edge costs. O((V + E) log V) with a binary heap.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -225,7 +225,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Runs depth-limited DFS repeatedly with an increasing depth bound (0, 1, 2, ...) until the goal is found; combines DFS's O(depth) space with BFS's guarantee of finding the shallowest goal first. Re-explores shallow levels repeatedly, but the overhead is only a constant factor (~b/(b-1)) versus plain BFS's space cost, since the deepest level dominates total node count in a tree with branching factor b > 1.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -243,7 +243,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "A bounded-memory variant of best-first search: at each depth, keeps only the beam-width k most promising candidates (by a heuristic/scoring function) and discards the rest, so memory is O(k * depth) instead of exponential. Not guaranteed to find the optimal solution — a good partial solution can be pruned early if it scores poorly compared to peers at its level even though it leads to the best final answer.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -261,7 +261,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Splits a search space of size 2^n into two halves of size 2^(n/2) each, enumerates all subset results for each half independently, then combines (often via sorting + binary search, or a hash set) in roughly O(2^(n/2) log(2^(n/2))) total instead of O(2^n). Viable when n is too large for full bitmask enumeration (n <= 20) but small enough that n/2 is (n <= ~40).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -284,7 +284,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(1) technique: precompute neighbor offsets (e.g. [[-1,0],[1,0],[0,-1],[0,1]] for 4-directional, or 8 entries including diagonals) and loop over them to visit a cell's neighbors uniformly, avoiding four/eight near-duplicate if-statements. Foundational building block for grid BFS/DFS, flood fill, and island counting.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -301,7 +301,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Typically O(rows + cols) for a matrix border (each layer's perimeter), or O(n) for a tree's boundary (left edge + leaves + right edge). No updates involved; a single deterministic pass.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -319,7 +319,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(rows * cols) single pass: shrink four boundaries (top, bottom, left, right) inward after each edge is walked. No updates; purely a traversal-order pattern over a static or generated grid.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -338,7 +338,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(rows * cols) time; O(1) extra space for an in-place square-matrix rotation, typically done as transpose then reverse-rows (clockwise) or reverse-rows then transpose (counter-clockwise), or via four-way cell swaps layer by layer.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -357,7 +357,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(rows * cols) time; in-place O(1) extra space possible for a square matrix by swapping across the diagonal, O(rows*cols) extra space needed for a non-square matrix.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -377,7 +377,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["island-problems"],
     complexityNotes:
       "Variant of BFS applied to a grid treated as an implicit graph (cells = nodes, 4/8-directional adjacency = edges). O(rows * cols) time and space in the standard single-source or multi-source form, since each cell is enqueued/visited once.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -397,7 +397,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["island-problems"],
     complexityNotes:
       "Variant of DFS applied to a grid treated as an implicit graph. O(rows * cols) time and space (recursion stack, worst case) for a standard connected-region traversal; watch for stack overflow on very large grids with naive recursion, an explicit stack avoids that.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -418,7 +418,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: ["range-query"],
     complexityNotes:
       "Variant of prefix sum extended to 2D. STATIC structure (no updates after O(rows*cols) build) answers any axis-aligned rectangle sum in O(1) via inclusion-exclusion over four corner lookups. If updates are needed, combine with a 2D Fenwick tree/BIT instead.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -439,7 +439,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Alias/near-duplicate of the DP track's grid-dp node — referenced here rather than redefined since the technique is identical (dynamic programming where the table is literally the input grid or shares its dimensions). O(rows * cols) time and space typically, reducible to O(cols) with row-by-row space optimization.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -461,7 +461,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Core enabling idea for offline processing: since answers don't have to be produced in input order (they're re-attached to original indices afterward), sorting queries by a convenient key (endpoint, value, deadline) turns an otherwise expensive per-query computation into an incremental one. Sort cost is O(q log q); the win comes from whatever incremental structure the sorted order then enables (two pointers, Fenwick tree, DSU, etc.).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -480,7 +480,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "General strategy: when every query is known in advance and there is no requirement to answer online (query k+1 doesn't depend on the answer to query k), queries can be reordered, batched, or processed alongside a sweep to share work — often turning an O(q * n) naive scheme into O((q + n) log n). Not applicable when queries must be answered as they arrive (online) or depend on prior answers.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -500,7 +500,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Uses Union-Find/DSU on a reordered (offline) sequence of union/query operations — the classic example is processing edge deletions in reverse as unions, since DSU supports union but not split. Near O(alpha(n)) amortized per operation after reordering; requires all operations to be known upfront.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -519,7 +519,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Offline technique: runs the binary search for ALL queries simultaneously, round by round — each round performs one sweep/update pass over the shared structure (e.g. a Fenwick tree) and uses it to advance every query's search bounds at once, rather than rebuilding the structure per query per binary-search step. Typically O((n + q) log n log(range)) total instead of O(q * n log(range)). Requires queries to be known upfront (offline) and the underlying check to be monotonic.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -542,7 +542,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(n) time, O(1) extra space (in-place). Iterates from the last index to the first, swapping each element with a uniformly random element at or before its own position, producing each of the n! permutations with exactly equal probability — the common bug is picking the random index from the FULL range instead of [0, i], which biases the result.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -560,7 +560,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(n) time single pass, O(k) space for a reservoir of size k, over a stream of unknown total length n. Each new i-th element (1-indexed) replaces a uniformly random slot in the reservoir with probability k/i, which can be proven to yield a uniform random sample of size k from the whole stream.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -579,7 +579,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Variant of quickselect that picks the partition pivot uniformly at random instead of a fixed position (e.g. always-first or always-last), which defeats adversarial inputs that would otherwise force worst-case O(n^2) on a deterministic pivot choice. Expected O(n) time; worst case is still O(n^2) but is now vanishingly unlikely rather than easily triggered.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -598,7 +598,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Variant of quicksort with a randomly chosen pivot per partition step, removing the dependence of worst-case behavior on input order. Expected O(n log n) time; worst case remains O(n^2) but requires astronomically unlucky pivot choices rather than a common input pattern (e.g. already sorted) to trigger it.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -618,7 +618,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Conceptual umbrella covering hash function design, collision resolution (separate chaining vs. open addressing/probing), load factor and resizing, and randomized hashing to defeat adversarial hash-flooding attacks. Expected O(1) per operation with a good hash function and load factor management; degrades to O(n) worst case under heavy collisions or an adversarial key set targeting a known hash function.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -636,7 +636,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Classification of randomized algorithms, not a single algorithm: a Monte Carlo algorithm has a fixed (often bounded) running time but a chance of an incorrect answer (e.g. Miller-Rabin primality testing); a Las Vegas algorithm is always correct but has a randomized/variable running time (e.g. randomized quicksort). No single complexity applies — the point is the correctness/runtime tradeoff framework itself.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -656,7 +656,7 @@ export const nodes: KnowledgeNode[] = [
       "foundational representation for any 2D/3D geometry problem",
     ],
     commonProblemShapes: [],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -674,7 +674,7 @@ export const nodes: KnowledgeNode[] = [
       "k closest points to origin",
     ],
     commonProblemShapes: [],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -690,7 +690,7 @@ export const nodes: KnowledgeNode[] = [
       "sign of dot product tells you acute/obtuse angle",
     ],
     commonProblemShapes: [],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -707,7 +707,7 @@ export const nodes: KnowledgeNode[] = [
       "used to determine orientation of three points",
     ],
     commonProblemShapes: [],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -724,7 +724,7 @@ export const nodes: KnowledgeNode[] = [
       "used inside convex hull and segment intersection algorithms",
     ],
     commonProblemShapes: [],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -740,7 +740,7 @@ export const nodes: KnowledgeNode[] = [
       "cross product equals zero test",
     ],
     commonProblemShapes: [],
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -757,7 +757,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "O(1) per pair of lines given their parametric/standard-form coefficients; must special-case parallel and coincident lines.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -774,7 +774,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "O(1) per pair using four orientation tests plus collinear-overlap special cases; checking all pairs among n segments is O(n^2) unless combined with a sweep line.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -789,7 +789,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "O(n) over the polygon's n vertices; see Shoelace Formula for the concrete implementation.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -808,7 +808,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "O(n) implementation of Polygon Area: sums cross products of consecutive vertex pairs, halves the absolute value. Sign of the raw sum also reveals winding order (CW vs CCW).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -825,7 +825,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "O(n) via ray casting (count edge crossings of a ray from the point) or winding number, over a polygon with n vertices; O(log n) possible if the polygon is convex and vertices are pre-sorted.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -843,7 +843,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "O(n log n) via sorting-based algorithms (Graham Scan, Monotonic Chain); O(nh) via gift wrapping (Jarvis March) where h is hull size, better only when h is small.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -860,7 +860,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "Implements Convex Hull in O(n log n): sorts n points by polar angle from the lowest point, then does a single stack-based pass popping non-left-turns.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -879,7 +879,7 @@ export const nodes: KnowledgeNode[] = [
     ],
     commonProblemShapes: [],
     complexityNotes: "Variant of / implements Convex Hull in O(n log n) (dominated by the initial sort): sorts points lexicographically by (x, y), then builds the lower and upper hull chains independently with the same orientation-test-and-pop logic as Graham Scan, avoiding the polar-angle sort's edge cases.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -898,7 +898,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Geometry-specific application of the general sweep-line pattern: an imaginary line sweeps across the plane (usually by x-coordinate), processing events in sorted order while maintaining an active-set structure (balanced BST/ordered set) of currently-relevant geometric objects. Typical complexity O(n log n) for problems like segment-intersection counting or rectangle union area, versus O(n^2) brute force.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -920,7 +920,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "O(b^d) time for a game tree with branching factor b and depth d, exploring every node — often paired with memoization on game state when states repeat, or with Alpha-Beta Pruning to cut the effective branching factor.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -939,7 +939,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Optimization of Minimax: maintains alpha (best already-guaranteed value for the maximizer) and beta (for the minimizer) bounds while traversing, and prunes any subtree that cannot change the final result. Same O(b^d) worst case as plain minimax, but O(b^(d/2)) best case with a good move ordering — effectively doubling the searchable depth for the same time budget.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -956,7 +956,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "The classic combinatorial game: the position is a first-player loss (under normal play) exactly when the XOR of all pile sizes is 0. Winner determined in O(number of piles), no game tree search needed once the XOR rule is known — the canonical motivating example for Grundy numbers and the Sprague-Grundy theorem.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -974,7 +974,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Umbrella concept for combinatorial games whose optimal-play outcome is characterized by an XOR (nim-sum) of per-component values being zero (losing for the player to move) or nonzero (winning) — generalizes Nim's pile-XOR rule to other game structures. No single fixed complexity; depends on how cheaply the relevant per-component value can be computed.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -993,7 +993,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Assigns each impartial-game position a Grundy value = mex (minimum excludant) of the Grundy values of positions reachable in one move; a position is a first-player loss iff its Grundy value is 0. Computing one position's Grundy value costs O(moves from that position * cost to look up each successor's value); often memoized over the state space, so total cost is O(number of distinct states * branching factor).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1011,7 +1011,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "States that any sum of independent impartial games under the normal play convention is equivalent to a single Nim pile whose size is the XOR of the Grundy values of the component games — this is what justifies reducing a compound multi-subgame position to one XOR check. Cost is the sum of computing each subgame's Grundy value plus O(number of subgames) to XOR them.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 
@@ -1033,7 +1033,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Models each constraint x_j - x_i <= c as a directed edge i -> j of weight c in a constraint graph, and a feasible assignment corresponds to consistent shortest-path distances from a virtual source; running Bellman-Ford (O(V*E)) both solves the system and detects infeasibility via a negative cycle. Related to (but distinct from) plain shortest-path systems: the graph is constructed FROM the constraints, not given directly.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1052,7 +1052,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "General technique: whenever two dynamic sets/structures must be merged repeatedly (e.g. across tree edges or during offline processing), always move the elements of the SMALLER one into the larger one. Because each element can only move into a structure at least double its previous container's size, each element moves O(log n) times total, giving O(n log n) total merge cost across all merges instead of a naive O(n^2). The trees track's 'dsu-on-tree' technique is this idea specialized to answering per-subtree queries — see that node for the tree-specific application.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1072,7 +1072,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Optimization/variant of Union-Find that forgoes path compression (keeping only union-by-rank/size) so each union is a small, reversible set of pointer changes recorded on a stack; O(log n) per union/find (no path compression means no O(alpha(n)) amortized bound), O(1) per rollback. Enables DSU to be used inside backtracking/divide-and-conquer-over-time schemes (e.g. offline dynamic connectivity) where operations must be undone.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1090,7 +1090,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Umbrella concept: a persistent structure preserves every previous version after an update instead of overwriting it, typically via path copying (only the O(log n) nodes on the path from root to the changed node are duplicated; unchanged subtrees are shared). Turns an O(n) full-copy-per-update into O(log n) extra time and space per update for tree-shaped structures. See Persistent Segment Tree for the concrete instance.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1110,7 +1110,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Dynamic AND versioned: each update creates a new root while sharing all unchanged subtrees with the previous version (path copying), costing O(log n) extra nodes per update instead of O(n) for a full copy. Query against any historical version is O(log n), same as a normal segment tree. Classic use: answering 'k-th smallest value in range [l, r]' by diffing two versions' node counts.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1129,7 +1129,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Dynamic structure: a binary search tree keyed by value, simultaneously kept heap-ordered by an independently assigned random priority per node, which keeps the tree balanced in EXPECTATION (O(log n) expected height) without explicit rotation-balancing logic like an AVL/red-black tree. Supports insert, delete, split, and merge all in O(log n) expected time — split/merge make it a natural base for an ordered set / order-statistics structure or a persistent balanced BST.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1147,7 +1147,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Dynamic structure: a segment tree over the x-coordinate domain where each node stores the currently 'winning' line for its range; inserting a line and querying the best value at a point are both O(log(range)). Unlike the classic monotonic Convex Hull Trick (which needs lines/queries added in sorted order for its O(1) amortized behavior), a Li Chao Tree accepts insertions and queries in ANY order at O(log(range)) each — the more general but slightly more expensive alternative.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1165,7 +1165,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Optimization technique, not a distinct algorithm: represents a boolean array/set as packed machine words and replaces per-element loops with word-level bitwise operations (AND/OR/XOR/shift), cutting the constant factor by the machine word size w (commonly 32 or 64). Turns an O(n^2) subset-sum-style DP into O(n^2 / w) in practice; does not change big-O in the abstract RAM model but is often the difference between TLE and AC in competitive programming.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1184,7 +1184,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "For each of the 2^n masks, computes an aggregate over all of its subset masks in O(2^n * n) total by iterating bit-by-bit (for each bit, pull in the aggregate from the mask with that bit cleared) instead of the naive O(3^n) of enumerating every (mask, submask) pair directly. Viable only for n small enough that 2^n * n is tractable — typically n <= ~20-22.",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
   {
@@ -1195,7 +1195,7 @@ export const nodes: KnowledgeNode[] = [
     category: "competitive-programming-techniques",
     difficulty: "specialist",
     interviewFrequency: "low",
-    prerequisites: ["matrix-dp", "sos-dp"],
+    prerequisites: ["matrix-dp", "bitmask-dp"],
     recognitionClues: [
       "tile a grid with dominoes/polyominoes and count/optimize the number of ways",
       "DP over a grid processed cell by cell, state = a bitmask 'profile' of the last row/column boundary",
@@ -1204,7 +1204,7 @@ export const nodes: KnowledgeNode[] = [
     commonProblemShapes: [],
     complexityNotes:
       "Grid DP pattern where the state is a bitmask 'profile' representing the tiling boundary (which cells along the current row/column cut are already filled), processed cell by cell rather than row by row. Complexity is roughly O(rows * cols * 2^cols) since each cell transition considers all 2^cols possible profiles — practical only when the smaller grid dimension is small (commonly <= ~12-16).",
-    languageTemplatesAvailable: ["javascript", "python"],
+    languageTemplatesAvailable: [],
     contentStatus: "skeleton",
   },
 ]

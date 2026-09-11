@@ -230,6 +230,8 @@ export type MasteryStatus =
 export type ConfidenceLevel = "guessing" | "unsure" | "fairly-sure" | "certain"
 
 export interface MasteryRecord {
+  reviewStreak?: number
+  attempts?: number
   nodeId: string
   status: MasteryStatus
   /** Weighted 30/30/15/10/15 respectively */
@@ -252,4 +254,59 @@ export interface DailyPracticeSet {
   complexityQuestionId: string
   weakTopicNodeId: string
   spacedRepetitionNodeIds: string[]
+}
+
+// Shared learner evidence and constraint reasoning contracts.
+export type AttemptKind = 'recognition' | 'coding' | 'trace' | 'complexity' | 'retention'
+export interface LearningAttempt {
+  kind: AttemptKind
+  correct: boolean
+  confidence: ConfidenceLevel
+  elapsedSeconds?: number
+  hintsUsed?: number
+  retries?: number
+}
+export interface RecognitionConstraints {
+  n?: number
+  negativeWeights?: boolean
+  unweighted?: boolean
+  hasNegativeNumbers?: boolean
+  dynamicUpdates?: boolean
+  rangeUpdates?: boolean
+  staticQueries?: boolean
+  sorted?: boolean
+}
+export interface RecognitionAnalysis {
+  clues: string[]
+  shapeIds: string[]
+  candidates: { patternId: string; reason: string; complexity: string }[]
+  eliminated: { patternId: string; reason: string }[]
+  constraintNotes: string[]
+  steps: string[]
+}
+
+export interface ExecutionResult {
+  testId: string
+  passed: boolean
+  actual?: unknown
+  error?: string
+}
+
+export interface SkillCheck {
+  id: string
+  nodeId: string
+  kind: 'trace' | 'template' | 'debug' | 'complexity'
+  prompt: string
+  code?: Record<LanguageId, string>
+  options: string[]
+  answerIndex: number
+  explanation: string
+}
+
+export interface VisualizationDemo {
+  patternId: string
+  title: string
+  description: string
+  initialValues: unknown
+  steps: VisualizationStep[]
 }

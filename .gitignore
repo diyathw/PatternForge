@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Runtime assets staged from node_modules by scripts/stage-static-assets.mjs
+# (regenerated on `npm run dev`/`build` via the pre<script> hooks)
+public/pyodide/
+
 # Claude Code local state
 .claude/
 
