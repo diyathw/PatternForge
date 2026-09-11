@@ -42,6 +42,8 @@ export type ContentStatus = "skeleton" | "in-progress" | "complete"
 
 export type LanguageId = "javascript" | "python"
 
+export type ThemeMode = "light" | "dark" | "system"
+
 export interface KnowledgeNode {
   id: string
   type: KnowledgeNodeType

@@ -2,6 +2,8 @@
 
 A React + TypeScript learning SPA for recognizing algorithmic structure across interviews, university algorithms and competitive programming. The curriculum distinguishes algorithms, patterns, data structures, strategies and recurring problem shapes; it does not claim a fixed universal number of patterns.
 
+Live at [diyathw.github.io/PatternForge](https://diyathw.github.io/PatternForge/), deployed automatically from `main` via `.github/workflows/deploy.yml`.
+
 ## Run locally
 
 ```bash
@@ -9,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Open the local URL printed by Vite. Practice defaults to JavaScript and supports Python. Language choice, exercise drafts and learner progress are saved in this browser's local storage. There is no account or backend synchronization.
+Open the local URL printed by Vite. Practice defaults to JavaScript and supports Python. Language choice, theme preference, exercise drafts and learner progress are saved in this browser's local storage. There is no account or backend synchronization.
 
 ## Development checks
 
@@ -20,6 +22,8 @@ npm test
 npm run build
 npm run preview
 ```
+
+The same checks (typecheck, lint, test, build) run in CI on every push and pull request to `main` (`.github/workflows/ci.yml`).
 
 ## Architecture and handoff
 
@@ -32,6 +36,8 @@ npm run preview
 - [Generated taxonomy](docs/TAXONOMY.md)
 
 Canonical curriculum IDs live in `src/data/taxonomy/`; shared domain interfaces live in `src/types/domain.ts`. New curriculum content must reference those IDs. Fully developed core lessons and lighter specialist entries coexist; the application should indicate actual available content.
+
+Routing (`src/App.tsx`) uses React Router's `HashRouter` (`#/route`) rather than `BrowserRouter`. This is deliberate: GitHub Pages is a static host with no server-side rewrite rule, so a deep link or refresh on a non-root route would 404 under path-based routing, while hash routes always resolve to `index.html` regardless of what follows the `#`. Don't change this back to `BrowserRouter` without also solving that problem another way. The production base path (`/PatternForge/` vs `/`) is set in `vite.config.ts` via the `GITHUB_PAGES` env var, which is only set by the deploy workflow.
 
 ## Code execution
 
