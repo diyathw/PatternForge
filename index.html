@@ -2,6 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Best-effort: GitHub Pages caches this file for 10 minutes server-side
+         (no custom headers possible there) and stale-chunk failures are the
+         known consequence — see the vite:preloadError handler in main.tsx for
+         the actual fix. This meta tag helps in browsers that honor it but
+         isn't authoritative for HTTP caching. -->
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PatternForge</title>
