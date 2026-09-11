@@ -1,6 +1,6 @@
 # PatternForge session handoff
 
-Updated: 2026-09-11 (Claude integration session; app builds, tests, and runs end-to-end).
+Updated: 2026-09-11 (Claude integration session; app builds, tests, and runs end-to-end; deployed live to GitHub Pages).
 
 ## Resume here
 
@@ -28,11 +28,15 @@ Read this file, `IMPLEMENTATION_PLAN.md`, `CURRICULUM_QA.md`, and root agent ins
 - Production build failed: `monaco-editor/esm/vs/.../*.worker?worker` bare-specifier imports don't resolve under this Vite 8 (Rolldown) build — a current Rolldown limitation, not a config mistake. Fixed by importing via relative paths (`../../../node_modules/monaco-editor/esm/...?worker`) instead of bare specifiers; Rolldown resolves relative worker imports fine. Also added `monaco-editor` as an explicit direct dependency (it was only present as a transitive/hoisted dependency of `@monaco-editor/react`, which is fragile).
 - No CSS existed for any of the ~110 semantic class names used across `App.tsx` and the visualization primitives — the app rendered as unstyled text. Wrote the full stylesheet (see above).
 - `.cheat` (Cheat Sheet rows) combined the shared `.panel` class (1.5rem padding on the container) with its own child-level padding on `summary`/`p`/`pre`/`a` (designed for a flush, zero-padding container) — the two stacked, bloating every collapsed row to ~105px of mostly empty space. Fixed by zeroing `.panel`'s padding specifically for `.cheat`. Audited every other `.panel`-combo class name (`tinted`, `empty`, `table-scroll`) for the same doubling risk; none of the others had it.
+- Native `<select>` chrome reserves its own arrow gutter beyond CSS `padding` (confirmed via computed styles: actual padding was identical to text inputs, 8.8px/12px both). Set `appearance: none` and added a custom SVG chevron at a fixed inset so filter rows line up evenly.
+- Deployed to GitHub Pages (`https://diyathw.github.io/PatternForge/`, `.github/workflows/deploy.yml`, `vite.config.ts`'s `base` set via `GITHUB_PAGES` env var). Switched `BrowserRouter` → `HashRouter`: GitHub Pages is a static host with no server-side rewrite rule, so a deep link or refresh on any non-root route (or even the plain `basename`-corrected root, mid-propagation) would 404. Hash routes always resolve to the same `index.html` regardless of path, so this sidesteps the whole class of problem with zero extra server config.
+- Pattern Map's relationship view was a plain text list. Added `GraphDiagram` — a real SVG ego-graph (center node + radial neighbors from parent/children/relationship edges, edge-type labels, click-to-recenter) — as the primary visual, alongside (not replacing) the existing text list.
+- Live-verified Python/Pyodide execution end-to-end this session (previously untested): cold-loaded Pyodide in a real browser, ran a solution for the `anagram` exercise, all tests passed. Both language paths are now confirmed working, not just typechecked.
+- Noticed but not fixed: two exercises (`hash-map` and `pair-sum`) share the exact title "Find a complementary pair" in the Practice exercise picker — cosmetic content dedup, not a bug, low priority.
 
 ## Known gaps / not yet done
 
 - Bundle size warning on build (Monaco + language grammars push a few chunks over 500kB). Not a correctness issue; could be addressed later with `dynamic import()` code-splitting for `CodeEditor` if it matters for real-world load time. Not urgent for a learning tool.
-- Python/Pyodide execution path was not live-tested in a browser this session (JS path was, and both share the same `runCode`/`runner.ts` logic, differing only in which Worker is spawned) — worth a real Python "Run tests" click next session.
 - 4 non-blocking `oxlint` warnings (`react(set-state-in-effect)` x3, `react(purity)` x1) in `App.tsx`/`VisualizationPlayer.tsx` — style nitpicks about effect usage, not bugs; left as-is to avoid risking the tested behavior for marginal gain.
 - Only 29/384 taxonomy nodes have deep content (`contentStatus: "complete"`); this matches the plan's intentional scope (full skeleton taxonomy + first-release core deepened), not an oversight. Deepening more patterns is future work — see `docs/AUTHORING_GUIDE.md`.
 - `npm audit` reports one moderate transitive vulnerability (`dompurify` via `monaco-editor`, used only for the editor's internal tooltip sanitization — this app never feeds untrusted external HTML through Monaco). `npm audit fix --force` would downgrade `monaco-editor` to 0.53.0, a breaking change; left as-is rather than risk destabilizing the worker-loading fix. Revisit if monaco-editor ships a patched dompurify.
