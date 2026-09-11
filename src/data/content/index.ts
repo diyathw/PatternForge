@@ -3,6 +3,7 @@ import './arrays'
 import './graphs'
 import './structures'
 import './interview14'
+import './linked-list'
 import type { PatternContent, CodingExercise } from '../../types/domain'
 
 export const patternContents: PatternContent[] = lessons

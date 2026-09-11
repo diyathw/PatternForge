@@ -14,7 +14,7 @@ export const nodes: KnowledgeNode[] = [
     difficulty: "beginner", interviewFrequency: "high",
     recognitionClues: ["nodes connected by next or previous references", "insert or delete beside a known node"],
     complexityNotes: "O(n) indexed access or search. O(1) insertion after a known node; deletion needs its predecessor in a singly linked list. O(n) storage.",
-    languageTemplatesAvailable: [], contentStatus: "skeleton",
+    languageTemplatesAvailable: ["javascript", "python"], contentStatus: "complete",
   },
   {
     id: "graph", type: "data-structure", name: "Graph",

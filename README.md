@@ -16,12 +16,13 @@ Open the local URL printed by Vite. Practice defaults to JavaScript and supports
 ## Development checks
 
 ```bash
-npm run typecheck
-npm run lint
-npm test
+npm run check       # ESLint + typecheck + tests
+npm run lint:fix    # apply ESLint auto-fixes
 npm run build
 npm run preview
 ```
+
+Husky installs the pre-commit hook during `npm install`; every commit runs `npm run check`. `npm run lint:oxlint` retains the optional fast Oxlint pass. ESLint uses a flat JS/TypeScript configuration with React hook correctness rules.
 
 The same checks (typecheck, lint, test, build) run in CI on every push and pull request to `main` (`.github/workflows/ci.yml`).
 

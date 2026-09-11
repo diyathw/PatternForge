@@ -15,7 +15,8 @@ npm run dev         # start Vite dev server
 npm run build        # tsc -b type-check + production build
 npm run typecheck     # tsc -b --noEmit only
 npm test               # run Vitest once (npm run test:watch for watch mode)
-npm run lint             # oxlint
+npm run lint             # ESLint (JS/TypeScript + React hooks)
+npm run check            # lint + typecheck + tests (also runs before commits)
 npm run preview           # preview a production build
 ```
 

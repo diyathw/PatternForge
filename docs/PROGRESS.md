@@ -52,3 +52,15 @@ Read this file, `IMPLEMENTATION_PLAN.md`, `CURRICULUM_QA.md`, and root agent ins
 2. Consider deepening a few more first-release patterns (target list is in the original build plan: ~30 core patterns; 29 done, close to complete).
 3. If bundle size becomes a real concern, lazy-load `CodeEditor` more aggressively or drop unused Monaco language grammars.
 4. Decide whether to commit `package-lock.json` changes (monaco-editor added as a direct dependency) — already included in this session's commit.
+
+## Codex visual-learning update — 2026-09-11
+
+User requested substantial algorithm animation, a clearer Linked List lesson, branding, syntax highlighting, ESLint/Husky, and commit/push through the existing GitHub Pages workflow.
+
+- Added generated, immutable micro-step traces and animated scenes for sliding window (expand/shrink pointers, window outline, counts, best length), anagram comparison (count/cancel buckets including negative balances), and BFS (connected SVG, active edges, queue, distances, cycle skips and unreachable node). Preset examples include repeated characters and mismatching multiplicities. Visualizer Lab opens Sliding Window and offers direct topic shortcuts. Other lessons retain their existing generic walkthroughs; they have not all been converted to custom animations.
+- Replaced the Linked List skeleton with a beginner lesson, node/reference diagram, traversal and insertion walkthrough, JS/Python templates and a 3-case exercise. Marked its canonical taxonomy node complete and regenerated TAXONOMY.md.
+- New connected-node P mark in public/logo.svg and favicon.svg; sidebar asset uses Vite BASE_URL for GitHub Pages.
+- Added Prism-based JavaScript/Python syntax highlighting for lesson templates, skill checks and cheat sheets, rendered as React text/token spans with light/dark/system colors. Lesson complexity now prefers the authored exercise complexity over generic structure operation costs.
+- Added ESLint flat config with recommended JS/TypeScript and React hook correctness rules. npm run lint uses ESLint; oxlint remains available as lint:oxlint. npm run check runs lint, typecheck and tests. Husky prepare activates .husky/pre-commit, which runs check. The existing deploy.yml now runs check before its GitHub Pages build/deploy.
+- Validation so far: ESLint/typecheck pass; all 43 tests across 10 files pass, including window count invariants, independent anagram results, BFS cycle handling and replay/reset. Linked List templates separately executed in JS and Python, all 3 cases passing. GitHub Pages-mode production build passes with existing Monaco chunk-size/Pyodide externalization warnings. Browser checked preset switching, anagram mismatch, BFS discovery, linked-list insertion, and Python syntax token colors. Final responsive check and commit/deployment status follow below.
+- Existing handoff counts are stale: the live content registry currently has 38 lessons including this addition, while TAXONOMY.md reports node statuses separately (problem shapes are a distinct registry). No broader curriculum status reconciliation was attempted here.

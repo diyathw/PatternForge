@@ -4,7 +4,7 @@ Generated from `src/data/taxonomy/` by `scripts/generate-taxonomy-doc.ts`. Do no
 
 Legend: ○ skeleton · ◐ in-progress · ● complete
 
-- **384** total nodes (**26** complete, **358** skeleton)
+- **384** total nodes (**27** complete, **357** skeleton)
 - **59** problem shapes
 - **964** relationships
 - **6** complexity heuristics
@@ -151,7 +151,7 @@ Legend: ○ skeleton · ◐ in-progress · ● complete
 | ○ | `graph` | Graph | data-structure | core | very-high |
 | ○ | `hash-map` | Hash Map | data-structure | beginner | very-high |
 | ○ | `hash-set` | Hash Set | data-structure | beginner | very-high |
-| ○ | `linked-list` | Linked List | data-structure | beginner | high |
+| ● | `linked-list` | Linked List | data-structure | beginner | high |
 
 ### directed-graphs
 

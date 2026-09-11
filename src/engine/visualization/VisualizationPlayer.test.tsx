@@ -14,3 +14,22 @@ describe('visualization navigation',()=>{
   expect(screen.getByText('Compare both endpoints.')).toBeInTheDocument()
  })
 })
+
+it('replays from the end and resets when choosing another example', async () => {
+  const { vi } = await import('vitest')
+  const { act } = await import('@testing-library/react')
+  vi.useFakeTimers()
+  try {
+    render(<VisualizationPlayer content={{patternId:'anagram',steps:[],initialValues:[]}} />)
+    const slider=screen.getByRole('slider',{name:'Jump to step'})
+    fireEvent.change(slider,{target:{value:slider.getAttribute('max')}})
+    expect(screen.getByText('✓ Anagrams')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button',{name:'Play'}))
+    expect(slider).toHaveValue('0')
+    act(()=>vi.advanceTimersByTime(1600))
+    expect(slider).toHaveValue('1')
+    fireEvent.change(screen.getByLabelText('Try an example'),{target:{value:'1'}})
+    expect(slider).toHaveValue('0')
+    expect(screen.getByRole('button',{name:'Play'})).toBeInTheDocument()
+  } finally { vi.useRealTimers() }
+})

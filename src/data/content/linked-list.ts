@@ -1,0 +1,21 @@
+import { add } from './catalog'
+add('linked-list', 'Read a chain of nodes',
+  'Given the head of a finite, acyclic singly linked list, return its values in order. Each node has value and next fields; null represents an empty list or the end.',
+  'A linked list is a chain of nodes. Each node stores a value and a next reference pointing to another node. The head is the first node; null means there is no next node. Unlike an array, the nodes do not need consecutive memory locations. To reach the third node, start at the head and follow next twice. You cannot jump directly to an index. A traversal uses a current reference: read its value, then move current to current.next until current is null.',
+  'Traversal and indexed lookup take O(n) time. Traversal uses O(1) auxiliary space, excluding the O(n) returned values. Insertion after an already known node takes O(1); finding that node takes O(n).',
+  'Follow the arrows. Moving current changes which node you are looking at; it does not move or delete the nodes.',
+  ['nodes connected by next references', 'insert after an already known node'],
+  'Use an array when fast indexed access matters. If a list can contain a cycle, detect it rather than assuming traversal will reach null.',
+  `function solve(head) {\n  const values = [];\n  let current = head;\n  while (current !== null) {\n    values.push(current.value);\n    current = current.next;\n  }\n  return values;\n}`,
+  `def solve(head):\n    values = []\n    current = head\n    while current is not None:\n        values.append(current['value'])\n        current = current['next']\n    return values`,
+  [[{value:10,next:{value:20,next:{value:30,next:null}}},[10,20,30]],[null,[]],[{value:7,next:null},[7]]],
+  [
+    ['head points to node 10. Each box contains a value and a next reference. Start current at head.',{nodes:[10,20,30],current:0,output:[]}],
+    ['Read 10. Follow its next arrow to node 20. The head still points to 10.',{nodes:[10,20,30],current:1,output:[10]}],
+    ['Read 20. Follow its next arrow to node 30.',{nodes:[10,20,30],current:2,output:[10,20]}],
+    ['Read 30. Its next is null, so stop. Return [10,20,30].',{nodes:[10,20,30],current:3,output:[10,20,30]}],
+    ['Separate insertion example: start again with 10 → 20 → 30. To insert 15 after 10, first create node 15 and set newNode.next = node10.next (20). Keep the existing chain connected.',{nodes:[10,20,30],current:0,output:[],insertion:'prepare'}],
+    ['Now set node10.next = newNode. The chain is 10 → 15 → 20 → 30. Only two references changed; the existing nodes were not shifted. This is O(1) when node 10 is already known.',{nodes:[10,15,20,30],current:1,output:[],insertion:'done'}],
+  ],
+  ['Overwriting next before saving the remaining chain can lose access to later nodes.', 'Do not read current.value when current is null.', 'A linked list has O(n) indexed access, unlike an array.', 'Deleting in a singly linked list generally needs the predecessor so its next can bypass the removed node.'],
+  ['reverse-list','fast-slow-pointers','array'])
